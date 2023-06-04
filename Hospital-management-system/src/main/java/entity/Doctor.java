@@ -1,6 +1,6 @@
 package entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,5 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Doctor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long doctor_id;
+    private String password;
+    private String birth_date;
+    private String nic;
+    private String name;
+
+    @ManyToOne()
+    @JoinColumn(
+            name = "ward_id",
+            referencedColumnName = "wardId"
+    )private Ward ward;
 
 }

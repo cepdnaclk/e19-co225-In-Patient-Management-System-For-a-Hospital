@@ -1,9 +1,6 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,4 +21,10 @@ public class User {
     private String nic;
     private String name;
     private String medical_history;
+
+    @ManyToOne()
+    @JoinColumn(
+            name = "ward_id",
+            referencedColumnName = "wardId"
+    )private Ward ward;
 }
