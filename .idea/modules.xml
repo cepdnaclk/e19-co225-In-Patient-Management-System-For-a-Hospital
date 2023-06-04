@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/Hospital-management-system/Hospital-management-system.iml" filepath="$PROJECT_DIR$/Hospital-management-system/Hospital-management-system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/e19-co225-In-Patient-Management-System-For-a-Hospital.iml" filepath="$PROJECT_DIR$/.idea/e19-co225-In-Patient-Management-System-For-a-Hospital.iml" />
-    </modules>
-  </component>
-</project>
