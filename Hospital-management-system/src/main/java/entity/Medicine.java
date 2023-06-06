@@ -24,13 +24,13 @@ public class Medicine {
 
     @ManyToOne()
     @JoinColumn(
-            name = "doctor_id",
+            name = "doctor_medicine_id",
             referencedColumnName = "doctorId"
     )private Doctor doctor;
 
     @ManyToOne()
     @JoinColumn(
-            name = "user_id",
+            name = "user_medicine_id",
             referencedColumnName = "userId"
     )private User user;
 

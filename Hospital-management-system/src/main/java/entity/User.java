@@ -18,7 +18,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long user_id;
+    private long userId;
     private String password;
     private String birth_date;
     private String nic;
@@ -33,4 +33,10 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Medicine> medicines = new ArrayList<Medicine>();
+
+    @OneToMany(mappedBy = "user_advice")
+    private List<Advice> advices = new ArrayList<Advice>();
+
+    @OneToMany(mappedBy = "user_records_by_doctor")
+    private List<RecordsDoctor> records_by_doctor = new ArrayList<RecordsDoctor>();
 }
