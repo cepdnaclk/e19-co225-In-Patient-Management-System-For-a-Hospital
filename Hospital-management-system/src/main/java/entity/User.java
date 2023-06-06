@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -27,4 +30,7 @@ public class User {
             name = "ward_id",
             referencedColumnName = "wardId"
     )private Ward ward;
+
+    @OneToMany(mappedBy = "user")
+    private List<Medicine> medicines = new ArrayList<Medicine>();
 }

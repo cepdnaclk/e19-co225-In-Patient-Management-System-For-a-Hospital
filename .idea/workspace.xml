@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/DoctorUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/Hospital-management-system.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Doctor$DoctorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Doctor$DoctorBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Doctor.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2QjdEgJLhwW9OoH8hCjLO03CiPa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ASUS ExpertBook/Desktop/semester 4/CO225/lab3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "settings.editor.splitter.proportion": "0.2533609",
+    "spring.configuration.checksum": "618e2b2f82b3eb451fb4dc7b82dfd6bc",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="HospitalManagementSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Hospital-management-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="CO225.Hospitalmanagementsystem.HospitalManagementSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="" />
+      <created>1685870818741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685870818741</updated>
+      <workItem from="1685870819624" duration="13720000" />
+      <workItem from="1685950859264" duration="2649000" />
+      <workItem from="1686019690473" duration="1554000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/User.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

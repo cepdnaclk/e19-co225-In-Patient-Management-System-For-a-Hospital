@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -14,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long doctor_id;
+    private long doctorId;
     private String password;
     private String birth_date;
     private String nic;
@@ -25,5 +28,7 @@ public class Doctor {
             name = "ward_id",
             referencedColumnName = "wardId"
     )private Ward ward;
+
+
 
 }
