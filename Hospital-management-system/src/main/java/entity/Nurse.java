@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @Builder
 
-public class nurse {
+public class Nurse {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long nurseId;
