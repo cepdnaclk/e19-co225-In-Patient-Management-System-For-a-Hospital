@@ -1,4 +1,4 @@
-package com.in_patient_management.entity;
+package entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
