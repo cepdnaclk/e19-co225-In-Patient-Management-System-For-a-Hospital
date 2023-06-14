@@ -1,4 +1,4 @@
-package entity;
+package CO225.Hospitalmanagementsystem.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

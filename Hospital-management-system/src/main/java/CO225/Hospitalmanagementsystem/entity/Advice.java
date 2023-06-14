@@ -1,9 +1,6 @@
-package entity;
+package CO225.Hospitalmanagementsystem.entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,11 +14,11 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class Advice {
-    @EmbeddedId
-    private DoctorUser id;
+
     private Date date;
     private String details;
 
+    @Id
     @ManyToOne()
     @JoinColumn(
             name = "doctor_advice_id",
@@ -29,6 +26,7 @@ public class Advice {
     )
     private Doctor doctor_advice;
 
+    @Id
     @ManyToOne()
     @JoinColumn(
             name = "user_advice_id",
