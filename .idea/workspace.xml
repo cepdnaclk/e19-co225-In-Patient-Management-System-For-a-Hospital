@@ -5,42 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_6_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_6_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_6_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_6_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_6_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Nurse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/RecordsNurse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/DoctorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/Hospital-management-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/Hospital-management-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/HospitalManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/HospitalManagementSystemApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/controller/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Advice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Advice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/DoctorUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/RecordsDoctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/RecordsDoctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Ward.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Ward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/AdmissionRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Nurse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/NurseUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/RecordsNurse.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/HospitalManagementSystemApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/HospitalManagementSystemApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/controller/StartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Advice$AdviceBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Advice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Doctor$DoctorBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Doctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/DoctorUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Medicine$MedicineBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Medicine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/RecordsDoctor$RecordsDoctorBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/RecordsDoctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/User$UserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Ward$WardBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/entity/Ward.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +94,7 @@
       <workItem from="1686114670448" duration="395000" />
       <workItem from="1686125357162" duration="3207000" />
       <workItem from="1686305296553" duration="63000" />
-      <workItem from="1686739813355" duration="1439000" />
+      <workItem from="1686739813355" duration="16146000" />
     </task>
     <servers />
   </component>
