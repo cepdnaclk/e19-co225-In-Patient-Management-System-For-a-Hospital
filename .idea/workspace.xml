@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/UserInfoUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/UserInfoUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/UserInfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/DoctorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/StartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/StartController.class" afterDir="false" />
-    </list>
+    <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +92,7 @@
       <workItem from="1686305296553" duration="63000" />
       <workItem from="1686739813355" duration="16594000" />
       <workItem from="1686841434032" duration="11678000" />
-      <workItem from="1686894220689" duration="6012000" />
+      <workItem from="1686894220689" duration="6559000" />
     </task>
     <servers />
   </component>
