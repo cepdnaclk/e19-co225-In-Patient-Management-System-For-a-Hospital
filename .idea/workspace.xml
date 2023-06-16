@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/DoctorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/UserInfoUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/UserInfoUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/UserInfoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/DoctorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/StartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/AdmissionRep.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/Nurse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/NurseUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/entity/RecordsNurse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/StartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/controller/StartController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,28 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ASUS ExpertBook/Desktop/sec",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "settings.editor.splitter.proportion": "0.2533609",
-    "spring.configuration.checksum": "618e2b2f82b3eb451fb4dc7b82dfd6bc",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS ExpertBook/Desktop/e19-co225-In-Patient-Management-System-For-a-Hospital&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2533609&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;618e2b2f82b3eb451fb4dc7b82dfd6bc&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="CO225.Hospitalmanagementsystem.service" />
+      <recent name="CO225.Hospitalmanagementsystem.config.service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="HospitalManagementSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Hospital-management-system" />
@@ -94,7 +105,9 @@
       <workItem from="1686114670448" duration="395000" />
       <workItem from="1686125357162" duration="3207000" />
       <workItem from="1686305296553" duration="63000" />
-      <workItem from="1686739813355" duration="16146000" />
+      <workItem from="1686739813355" duration="16594000" />
+      <workItem from="1686841434032" duration="11678000" />
+      <workItem from="1686894220689" duration="6012000" />
     </task>
     <servers />
   </component>

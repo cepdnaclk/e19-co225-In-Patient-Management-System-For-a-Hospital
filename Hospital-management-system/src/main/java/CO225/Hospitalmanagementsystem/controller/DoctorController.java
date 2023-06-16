@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/doctor")
+
 public class DoctorController {
 
     //@PreAuthorize("hasAuthority('DOCTOR')")
-    @GetMapping("/")
+    @GetMapping("/doctor")
     public String secure(){
         return "Access only to doctors";
     }
