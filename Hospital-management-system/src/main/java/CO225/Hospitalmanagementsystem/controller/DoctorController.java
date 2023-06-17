@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class DoctorController {
 
-    //@PreAuthorize("hasAuthority('DOCTOR')")
+    //@PreAuthorize("hasAuthority('ROLE_DOCTOR')")
     @GetMapping("/doctor")
     public String secure(){
         return "Access only to doctors";

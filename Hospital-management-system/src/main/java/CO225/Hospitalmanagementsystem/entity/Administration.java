@@ -18,11 +18,5 @@ public class Administration {
 
     private String password;
 
-    public void setAdminId(Long adminId) {
-        this.adminId = adminId;
-    }
 
-    public Long getAdminId() {
-        return adminId;
-    }
 }

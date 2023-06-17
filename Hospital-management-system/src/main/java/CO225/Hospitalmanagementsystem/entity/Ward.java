@@ -24,4 +24,7 @@ public class Ward {
     @OneToMany(mappedBy = "ward")
     private List<User> patients = new ArrayList<User>();
 
+//    @OneToMany(mappedBy = "doctor")
+//    private List<Doctor> doctors = new ArrayList<>();
+
 }

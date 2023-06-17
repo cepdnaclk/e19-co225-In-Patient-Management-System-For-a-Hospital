@@ -59,8 +59,9 @@ public class SecurityConfig {
         DefaultSecurityFilterChain build = http.csrf().disable().authorizeHttpRequests()
                 .requestMatchers("/", "/admin/welcome", "/admin/new").permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/products/**")
-                .authenticated().and().formLogin().and().build();
+                .authorizeHttpRequests().requestMatchers("/doctor").hasRole("DOCTOR")
+               // .authenticated()
+                        .and().formLogin().and().build();
         return build;
 
 
@@ -71,13 +72,13 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    public AuthenticationProvider authenticationProvider(){
-//        DaoAuthenticationProvider authenticationProvider=new DaoAuthenticationProvider();
-//        authenticationProvider.setUserDetailsService(userDetailsService());
-//        authenticationProvider.setPasswordEncoder(passwordEncoder());
-//        return authenticationProvider;
-//    }
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider authenticationProvider=new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
+    }
 
 
 

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Doctor {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long doctorId;
     private String password;
     private String birth_date;
