@@ -1,7 +1,9 @@
 package CO225.Hospitalmanagementsystem.controller;
 
 import CO225.Hospitalmanagementsystem.entity.UserInfo;
+import CO225.Hospitalmanagementsystem.entity.Ward;
 import CO225.Hospitalmanagementsystem.service.AdminService;
+import CO225.Hospitalmanagementsystem.service.WardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
     @Autowired
     AdminService adminService;
+    @Autowired
+    WardService wardService;
 
     @GetMapping("/welcome")
     //public String add(@RequestBody UserInfo userInfo){return adminService.addUser(userInfo);}
@@ -22,5 +26,11 @@ public class AdminController {
     public String addNewUser(@RequestBody UserInfo userInfo){
         return adminService.addUser(userInfo);
       //  return "check";
+    }
+
+    @PostMapping("/wardadd")
+    public String addNewWard(@RequestBody Ward ward){
+        return wardService.addWard(ward);
+        //  return "check";
     }
 }

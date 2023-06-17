@@ -1,12 +1,11 @@
 package CO225.Hospitalmanagementsystem.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Entity
 @Data
@@ -20,5 +19,17 @@ public class UserInfo {
     private String userName;
     private String password;
     private String roles;
+
+    private String birthDate; //format: dd/mm/year
+    private String name;
+    private Date startDate;
+    private String nic;
+    private int wardno;
+
+    @ManyToOne()
+    @JoinColumn(
+            name = "ward_id",
+            referencedColumnName = "wardId"
+    )private Ward ward;
 
 }
