@@ -5,45 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/PatientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/controller/RecordsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Records.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/PatientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/RecordsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/PatientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/RecordsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Administration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Advice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Advice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Doctor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Nurse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/NursesAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/RecordsDoctor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/RecordsNurse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Records.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/entity/Records.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/UserInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Administration$AdministrationBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Administration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Advice$AdviceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Advice$AdviceBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Advice.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Advice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Doctor$DoctorBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Doctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Medicine$MedicineBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Medicine$MedicineBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Medicine.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Medicine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Nurse$NurseBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Nurse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/NursesAdmin$NursesAdminBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/NursesAdmin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/RecordsDoctor$RecordsDoctorBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/RecordsDoctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/RecordsNurse$RecordsNurseBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/RecordsNurse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/WardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/repository/WardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/RecordsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/src/main/java/CO225/Hospitalmanagementsystem/service/RecordsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Records$RecordsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Records$RecordsBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Records.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/Records.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/User$UserBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/repository/UserInfoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/repository/UserInfoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/service/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/service/PatientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/service/RecordsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital-management-system/target/classes/CO225/Hospitalmanagementsystem/service/RecordsService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +108,7 @@
       <workItem from="1686739813355" duration="16594000" />
       <workItem from="1686841434032" duration="11678000" />
       <workItem from="1686894220689" duration="12382000" />
-      <workItem from="1686933317703" duration="29385000" />
+      <workItem from="1686933317703" duration="35567000" />
     </task>
     <servers />
   </component>

@@ -20,14 +20,17 @@ public class Records {
     private long id;
     private Date date;
     private  Float temperature;
-    private String pressure;
+    private  String pressure;
     private String others;
+    private Float sugarlevel;
 
     @ManyToOne()
     @JoinColumn(
             name = "officier_id",
             referencedColumnName = "id"
     )private UserInfo officier;
+
+    private int patientno;
 
     @ManyToOne()
     @JoinColumn(

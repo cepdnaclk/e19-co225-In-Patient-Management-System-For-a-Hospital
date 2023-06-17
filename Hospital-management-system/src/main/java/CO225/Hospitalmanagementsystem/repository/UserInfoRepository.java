@@ -13,8 +13,8 @@ public interface UserInfoRepository extends JpaRepository <UserInfo, Integer> {
     Optional<UserInfo> findByUserName(String userName);
 
     @Query(
-            value = "select * from UserInfo where user_name = ?1",
+            value = "select * from user_info where user_name = ?1",
             nativeQuery = true
     )
-    UserInfo findName(String userName);
+    UserInfo findByName(String userName);
 }
