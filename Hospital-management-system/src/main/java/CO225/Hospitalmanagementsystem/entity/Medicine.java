@@ -14,22 +14,24 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class Medicine {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private Date date;
     private  String details;
 
-    @Id
     @ManyToOne()
     @JoinColumn(
-            name = "doctor_medicine_id",
-            referencedColumnName = "doctorId"
-    )private Doctor doctor;
+            name = "doctor_medicine",
+            referencedColumnName = "id"
+    )private UserInfo doctor;
 
-    @Id
+
     @ManyToOne()
     @JoinColumn(
-            name = "user_medicine_id",
+            name = "patient_medicine",
             referencedColumnName = "userId"
-    )private User user;
+    )private User patient;
 
 
 

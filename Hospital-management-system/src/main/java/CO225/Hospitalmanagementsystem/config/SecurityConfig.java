@@ -57,9 +57,9 @@ public class SecurityConfig {
 //                 .build();
 
         DefaultSecurityFilterChain build = http.csrf().disable().authorizeHttpRequests()
-                .requestMatchers("/", "/admin/welcome", "/admin/new", "admin/wardadd").permitAll()
+                .requestMatchers("/", "/admin/welcome", "/admin/new", "admin/wardadd", "/addPatients").permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/doctor").hasRole("DOCTOR")
+                .authorizeHttpRequests().requestMatchers("/doctor", "/records").hasRole("DOCTOR")
                // .authenticated()
                         .and().formLogin().and().build();
         return build;

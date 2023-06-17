@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,11 +20,16 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userId;
-    private String password;
-    private String birth_date;
+
+    private String birthDate; //dd/mm/year
     private String nic;
     private String name;
-    private String medical_history;
+    private String medicalHistory;
+
+    private boolean isDischarged;
+    private Date admiteDate;
+    private String allergics;
+    private int wardno;
 
     @ManyToOne()
     @JoinColumn(
@@ -31,12 +37,12 @@ public class User {
             referencedColumnName = "wardId"
     )private Ward ward;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "patient")
     private List<Medicine> medicines = new ArrayList<Medicine>();
 
-    @OneToMany(mappedBy = "user_advice")
+    @OneToMany(mappedBy = "patient")
     private List<Advice> advices = new ArrayList<Advice>();
 
-    @OneToMany(mappedBy = "user_records_by_doctor")
-    private List<RecordsDoctor> records_by_doctor = new ArrayList<RecordsDoctor>();
+    @OneToMany(mappedBy = "patient")
+    private List<Records> records = new ArrayList<Records>();
 }

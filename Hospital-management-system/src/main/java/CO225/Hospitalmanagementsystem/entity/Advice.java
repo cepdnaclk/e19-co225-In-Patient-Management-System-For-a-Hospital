@@ -14,24 +14,26 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class Advice {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private Date date;
     private String details;
 
-    @Id
-    @ManyToOne()
-    @JoinColumn(
-            name = "doctor_advice_id",
-            referencedColumnName = "doctorId"
-    )
-    private Doctor doctor_advice;
 
-    @Id
     @ManyToOne()
     @JoinColumn(
-            name = "user_advice_id",
+            name = "doctor_advice",
+            referencedColumnName = "id"
+    )
+    private UserInfo doctor;
+
+
+    @ManyToOne()
+    @JoinColumn(
+            name = "user_advice",
             referencedColumnName = "userId"
     )
-    private User user_advice;
+    private User patient;
 
 }
