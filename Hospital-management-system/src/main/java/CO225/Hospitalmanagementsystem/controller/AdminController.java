@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
     @Autowired
     AdminService adminService;
-    @Autowired
-    WardService wardService;
+//    @Autowired
+//    WardService wardService;
 
     @GetMapping("/welcome")
     //public String add(@RequestBody UserInfo userInfo){return adminService.addUser(userInfo);}
@@ -28,9 +28,9 @@ public class AdminController {
       //  return "check";
     }
 
-    @PostMapping("/wardadd")
+    @PostMapping("/ward")
     public String addNewWard(@RequestBody Ward ward){
-        return wardService.addWard(ward);
+        return adminService.addWard(ward);
         //  return "check";
     }
 }

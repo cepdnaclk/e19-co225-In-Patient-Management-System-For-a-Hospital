@@ -32,4 +32,9 @@ public class AdminService {
         repository.save(userInfo);
         return "user added to system ";
     }
+
+    public String addWard(Ward ward){
+        wardRepository.save(ward);
+        return "ward added succesfuly";
+    }
 }

@@ -11,8 +11,5 @@ public class WardService {
     @Autowired
     private WardRepository wardRepository;
 
-    public String addWard(Ward ward){
-        wardRepository.save(ward);
-        return "ward added succesfuly";
-    }
+
 }
