@@ -1,7 +1,12 @@
 import React from 'react';
+import Navbar from './DashboardItems/Navibar';
 
 export default function Dashboard() {
     return (
-    <h1>Dashboard import success</h1>
+    <React.Fragment>
+        <Navbar/>
+    </React.Fragment>
     )
 }
+
+
