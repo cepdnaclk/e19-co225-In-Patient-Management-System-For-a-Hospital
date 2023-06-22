@@ -6,7 +6,7 @@ function DisplayDoctors() {
             <h1>Doctor content under construction...</h1>
             <h1>Doctor content under construction...</h1>
             <h1>Doctor content under construction...</h1>
-            <h1>Doctor content under construction...</h1>
+            <h1>Doctor content under construction...</h1> 
         </div>
     );
 }
