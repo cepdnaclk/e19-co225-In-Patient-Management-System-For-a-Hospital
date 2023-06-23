@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import Navbar from './DashboardItems/Navibar';
 import Sidebar from './DashboardItems/Sidebar';
 
-//Import the relevant  content items
-import DisplayDoctors from "./adminFiles/displayDoctors";
-import DisplayNurses from "./adminFiles/displayNurses";
-import DisplayWards from "./adminFiles/displayWards";
 import DisplayDashboard from "./adminFiles/displayDashboard";
 
 function Admin() {
@@ -38,27 +34,20 @@ function Admin() {
       ]
     ]);
 
-    //To Identify which button is clicked.
-    const [selectedItem, setSelectedItem] = useState(0);
-
-    const handleSidebarItemClick = (value) => {
-        setSelectedItem(value)
-    };
-
-    const [relatedComponent, setRelatedComponent] = useState([ <DisplayDashboard/>,<DisplayDoctors/>, <DisplayNurses/>, <DisplayWards/> ])
     return (
         <React.Fragment>
             <Navbar/>
-            <Sidebar navigationItems={navigationItems} onItemClick={handleSidebarItemClick} />
+            <Sidebar navigationItems={navigationItems} />
             <div className="p-2 sm:ml-64">
                 <div className=" border-2 border-gray-200 border dark:border-gray-700 mt-14" style={ { borderRadius:"10px" } }>
-               
-                  <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={ { borderTopLeftRadius:"8px", borderTopRightRadius:"8px" } }>
-                    <h1 class="font-bold pl-2"> {navigationItems[selectedItem][2]} </h1>
-                  </div>
-                  
-                  {/* Content is changed when a navigation button is clicked */}
-                  { relatedComponent[selectedItem] }
+
+            {/* content here */}
+<DisplayDashboard/>
+
+
+
+
+
                 </div>
             </div>
         </React.Fragment>
@@ -66,5 +55,3 @@ function Admin() {
 }
 
 export default Admin;
-
-

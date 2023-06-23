@@ -8,6 +8,12 @@ function DisplayDashboard() {
 
     return (
 <React.Fragment>
+    {/* Top Heading */}
+    <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={ { borderTopLeftRadius:"8px", borderTopRightRadius:"8px" } }>
+      <h1 class="font-bold pl-2"> Dashboard </h1>
+    </div>
+
+    {/* Doctors, Nurse, User count */}
     <div className="flex flex-wrap">
       <div className="w-full md:w-1/2 xl:w-1/3 p-6">
         <div className="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
