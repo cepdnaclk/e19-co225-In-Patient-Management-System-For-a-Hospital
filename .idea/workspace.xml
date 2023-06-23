@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Patient.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Patient.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,6 +108,7 @@
       <workItem from="1687290158317" duration="1164000" />
       <workItem from="1687291440128" duration="2211000" />
       <workItem from="1687428225886" duration="587000" />
+      <workItem from="1687464810450" duration="24000" />
     </task>
     <servers />
   </component>
