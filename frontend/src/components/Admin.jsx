@@ -3,6 +3,7 @@ import Navbar from './DashboardItems/Navibar';
 import Sidebar from './DashboardItems/Sidebar';
 
 import DisplayDashboard from "./adminFiles/displayDashboard";
+import DisplayDoctors from "./adminFiles/displayDoctors";
 
 function Admin() {
     // This contains Admin sidebar navigation items. Sidebar is updated using local state
@@ -41,9 +42,9 @@ function Admin() {
             <div className="p-2 sm:ml-64">
                 <div className=" border-2 border-gray-200 border dark:border-gray-700 mt-14" style={ { borderRadius:"10px" } }>
 
-            {/* content here */}
-<DisplayDashboard/>
-
+            {/*!!!!!!!!!! content here */}
+{/* <DisplayDashboard/> */}
+<DisplayDoctors/>
 
 
 
