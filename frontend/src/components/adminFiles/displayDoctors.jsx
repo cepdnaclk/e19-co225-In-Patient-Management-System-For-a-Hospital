@@ -4,7 +4,7 @@ import Doctor from './singleItems/singleDoctor';
 function DisplayDoctors() {
     const [doctors, setDoctors] = useState([
         {
-          id: 1,
+          id: 1, 
           name: 'Dr. John Doe',
           profession: 'Cardiologist',
           description: 'Specializes in heart-related conditions.',
