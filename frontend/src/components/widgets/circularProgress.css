@@ -28,6 +28,6 @@ div[role="progressbar"] {
 }
 
 div[role="progressbar"]::before {
-    counter-reset: percentage var(--value);
-    content: counter(percentage) '%';
+    counter-reset: amount var(--value);
+    content: counter(amount);
 }
