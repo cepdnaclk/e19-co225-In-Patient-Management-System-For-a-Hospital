@@ -1,14 +1,19 @@
 import React from 'react';
 import Patient from "./components/Patient"
 import Admin from './components/Admin';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element= {  <Admin/>    }  />
-            <Route path="/patient" element= {  <Patient/>  } />
-        </Routes>
+        // <>
+        // <BrowserRouter>
+            <Routes>
+                <Route index element = {<Admin/>}/>
+                <Route path="/" element= {  <Admin/>    }  />
+                <Route path="/patient" element= {  <Patient/>  } />
+            </Routes>
+        // </BrowserRouter>
+        // </>
     );
 }
 
