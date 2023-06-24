@@ -1,3 +1,4 @@
+import { FaHandHoldingMedical } from "react-icons/fa"; 
 import React, { useState } from 'react';
 import { AiFillFileAdd } from "react-icons/ai"; 
 import { AiFillDashboard } from "react-icons/ai"; 
@@ -11,12 +12,12 @@ import { GiStethoscope } from "react-icons/gi";
 function Adminsidebar() {
 
   const Menus = [
-    { title: "Dashboard" , src: <AiFillDashboard/> },
-    { title: "Doctors", src: <GiStethoscope /> },
-    { title: "Nurses" , src: <GiNurseFemale />, gap: true },
-    { title: "Wards", src: <RiHospitalFill /> },
-    { title: "Admission clerks", src: <FaReadme /> },
-    { title: "Add to staff", src:<AiFillFileAdd />  },
+    { title: "Dashboard" , src: <AiFillDashboard size={30}/> },
+    { title: "Doctors", src: <GiStethoscope size={30}/> },
+    { title: "Nurses" , src: <GiNurseFemale size={30} />},
+    { title: "Wards", src: <RiHospitalFill size={30} /> },
+    { title: "Admission clerks", src: <FaReadme size={30} /> },
+    { title: "Add to staff", src:<AiFillFileAdd size={30} />  },
     
   ];
   const [open, setOpen] = useState(true);
@@ -25,27 +26,14 @@ function Adminsidebar() {
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
+        } bg-blue-gray h-screen p-5  pt-8 relative duration-300`}
       >
-        <img
-          src="./src/assets/control.png"
-          className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180"}`}
-          onClick={() => setOpen(!open)}
-        />
         <div className="flex gap-x-4 items-center">
-          <img
-            src="./src/assets/logo.png"
-            className={`cursor-pointer duration-500 ${
-              open && "rotate-[360deg]"
-            }`}
-          />
-          <h1
-            className={`text-white origin-left font-medium text-xl duration-200 ${
-              !open && "scale-0"
-            }`}
+        <FaHandHoldingMedical size={55} color="#86efac"/>
+          <h1 className={`text-white origin-left font-large font-serif italic text-xl duration-200 ${!open && "scale-0"}`}
           >
-            Designer
+            MEDNET
+           
           </h1>
         </div>
         <ul className="pt-6">
@@ -70,6 +58,6 @@ function Adminsidebar() {
       </div>
     </div>
   );
-}
+};
 
-export default Adminsidebar
+export default Adminsidebar;
