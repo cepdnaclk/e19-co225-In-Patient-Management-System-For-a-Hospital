@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import EmployeeService from "../../services/EmployeeService";
 
 const AddStaffForm  = () => {
-  const [employee, setEmployee] = useState({
-    id: "",
+  const [employee, setEmployee] = useState({g
     firstName: "",
     lastName: "",
     emailId: "",
@@ -22,7 +21,7 @@ const AddStaffForm  = () => {
     EmployeeService.saveEmployee(employee)
       .then((response) => {
         console.log(response);
-        navigaye("/employeeList");
+        
       })
       .catch((error) => {
         console.log(error);
