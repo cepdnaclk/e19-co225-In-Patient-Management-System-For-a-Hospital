@@ -19,19 +19,19 @@ function Admin() {
             <AdminSidebar/>
             
             
-            <div className="p-2 sm:ml-64">
-                <div className=" border-2 border-gray-200 border dark:border-gray-700 mt-14" style={ { borderRadius:"10px" } }>
+            {/* <div className="p-2 sm:ml-64">
+                <div className=" border-2 border-gray-200 border dark:border-gray-700 mt-14" style={ { borderRadius:"10px" } }> */}
 
             {/*!!!!!!!!!! content here */}
-<DisplayDashboard/>
+{/* <DisplayDashboard/> */}
 
 {/* <DisplayDoctors/> */}
 
 
 
-
+{/* 
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

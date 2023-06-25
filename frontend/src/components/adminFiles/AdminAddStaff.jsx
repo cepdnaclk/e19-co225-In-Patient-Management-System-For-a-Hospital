@@ -6,28 +6,20 @@ import { FaReadme } from "react-icons/fa";
 import { RiHospitalFill } from "react-icons/ri"; 
 import { GiNurseFemale } from "react-icons/gi"; 
 import { GiStethoscope } from "react-icons/gi"; 
-import { useNavigate } from "react-router-dom";
 
 
 
 function Adminsidebar() {
-  const navigate = useNavigate();
+
   const Menus = [
-    { title: "Dashboard" , src: <AiFillDashboard size={30}/>, path:"" },
-    { title: "Doctors", src: <GiStethoscope size={30}/>, path: "" },
-    { title: "Nurses" , src: <GiNurseFemale size={30} />, path: ""},
-    { title: "Wards", src: <RiHospitalFill size={30} />, path: "" },
-    { title: "Admission clerks", src: <FaReadme size={30} />, path: "" },
-    { title: "Add to staff", src:<AiFillFileAdd size={30} /> , path: "/admin/addStaff" },
+    { title: "Dashboard" , src: <AiFillDashboard size={30}/> },
+    { title: "Doctors", src: <GiStethoscope size={30}/> },
+    { title: "Nurses" , src: <GiNurseFemale size={30} />},
+    { title: "Wards", src: <RiHospitalFill size={30} /> },
+    { title: "Admission clerks", src: <FaReadme size={30} /> },
+    { title: "Add to staff", src:<AiFillFileAdd size={30} />  },
     
   ];
-
-  const navigateDashBoard = (e, path) => {
-    
-    e.preventDefault();
-    navigate(path);
-  }
-
   const [open, setOpen] = useState(true);
   return (
     <div className="flex">
@@ -52,18 +44,17 @@ function Adminsidebar() {
               ${Menu.gap ? "mt-9" : "mt-2"} ${
                 index === 0 && "bg-light-white"
               } `}
-            ><a onClick={(e, path)=>navigateDashBoard(e, Menu.path)}>
-                <span>{Menu.src}</span>
-                <span className={`${!open && "hidden"} origin-left duration-200`}>
-                  {Menu.title}
-                </span>
-              </a>
+            >
+              <span>{Menu.src}</span>
+              <span className={`${!open && "hidden"} origin-left duration-200`}>
+                <a >{Menu.title}</a>
+              </span>
             </li>
           ))}
         </ul>
       </div>
       <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold ">Home Page</h1>
+        <h1 className="text-2xl font-semibold ">Add staff</h1>
       </div>
     </div>
   );
