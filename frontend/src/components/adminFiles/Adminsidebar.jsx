@@ -7,6 +7,7 @@ import { RiHospitalFill } from "react-icons/ri";
 import { GiNurseFemale } from "react-icons/gi"; 
 import { GiStethoscope } from "react-icons/gi"; 
 import { useNavigate } from "react-router-dom";
+import Navbar from "../DashboardItems/Navibar";
 
 
 
@@ -30,6 +31,7 @@ function Adminsidebar() {
 
   const [open, setOpen] = useState(true);
   return (
+   
     <div className="flex">
       <div
         className={` ${
@@ -49,15 +51,13 @@ function Adminsidebar() {
             <li
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
-            ><a onClick={(e, path)=>navigateDashBoard(e, Menu.path)}>
+              ${Menu.gap ? "mt-9" : "mt-2"}  `}
+            >
                 <span>{Menu.src}</span>
                 <span className={`${!open && "hidden"} origin-left duration-200`}>
-                  {Menu.title}
+                <a onClick={(e, path)=>navigateDashBoard(e, Menu.path)}>{Menu.title}</a>
                 </span>
-              </a>
+              
             </li>
           ))}
         </ul>

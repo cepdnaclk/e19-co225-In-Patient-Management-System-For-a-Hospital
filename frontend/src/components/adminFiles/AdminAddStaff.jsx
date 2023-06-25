@@ -6,6 +6,7 @@ import { FaReadme } from "react-icons/fa";
 import { RiHospitalFill } from "react-icons/ri"; 
 import { GiNurseFemale } from "react-icons/gi"; 
 import { GiStethoscope } from "react-icons/gi"; 
+import Navbar from "../adminFiles/Navbar";
 
 
 
@@ -22,6 +23,8 @@ function Adminsidebar() {
   ];
   const [open, setOpen] = useState(true);
   return (
+    <>
+    <Navbar/>
     <div className="flex">
       <div
         className={` ${
@@ -41,9 +44,7 @@ function Adminsidebar() {
             <li
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
+              ${Menu.gap ? "mt-9" : "mt-2"}  `}
             >
               <span>{Menu.src}</span>
               <span className={`${!open && "hidden"} origin-left duration-200`}>
@@ -57,6 +58,7 @@ function Adminsidebar() {
         <h1 className="text-2xl font-semibold ">Add staff</h1>
       </div>
     </div>
+    </>
   );
 };
 
