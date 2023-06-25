@@ -7,6 +7,7 @@ import { RiHospitalFill } from "react-icons/ri";
 import { GiNurseFemale } from "react-icons/gi"; 
 import { GiStethoscope } from "react-icons/gi"; 
 import Navbar from "../adminFiles/Navbar";
+import AddStaffForm from "../../components/adminFiles/AddStaffForm";
 
 
 
@@ -56,6 +57,7 @@ function Adminsidebar() {
       </div>
       <div className="h-screen flex-1 p-7">
         <h1 className="text-2xl font-semibold ">Add staff</h1>
+        <AddStaffForm/>
       </div>
     </div>
     </>
