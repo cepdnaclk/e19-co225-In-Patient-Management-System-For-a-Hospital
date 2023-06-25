@@ -93,8 +93,8 @@ const AddStaffForm  = () => {
   };
 
   return (
-    <div className="flex max-w-2xl mx-auto shadow border-b">
-      <div className="px-8 py-8">
+    <div className="flex max-w-2xl mx-auto shadow border-b ">
+      <div className="px-8 py-8 ">
         <div className={`${!msgVisible && "hidden"} font-thin text-2xl tracking-wider`}>
           <h1>{msg}</h1>
         </div> 
