@@ -2,6 +2,8 @@ package CO225.Hospitalmanagementsystem.service;
 
 import CO225.Hospitalmanagementsystem.entity.UserInfo;
 import CO225.Hospitalmanagementsystem.entity.Ward;
+import CO225.Hospitalmanagementsystem.model.UserInfoModel;
+import CO225.Hospitalmanagementsystem.model.WardModel;
 import CO225.Hospitalmanagementsystem.repository.UserInfoRepository;
 import CO225.Hospitalmanagementsystem.repository.WardRepository;
 import lombok.Data;
@@ -23,18 +25,27 @@ public class AdminService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public String addUser(UserInfo userInfo) {
-        userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
-        int wardno = userInfo.getWardno();
+    public UserInfoModel addUser(UserInfoModel userInfoModel) {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserName(userInfoModel.getUserName());
+        userInfo.setNic(userInfoModel.getNic());
+        userInfo.setName(userInfoModel.getName());
+        userInfo.setBirthDate(userInfoModel.getBirthDate());
+        userInfo.setEmail(userInfoModel.getEmail());
+        userInfo.setPassword(passwordEncoder.encode(userInfoModel.getPassword()));
+        int wardNo = userInfoModel.getWardNo();
         userInfo.setStartDate(new Date());
-        Ward ward = wardRepository.getByWardId(wardno);
+        Ward ward = wardRepository.getByWardId(wardNo);
         userInfo.setWard(ward);
         repository.save(userInfo);
-        return "user added to system ";
+        return userInfoModel;
     }
 
-    public String addWard(Ward ward){
+    public WardModel addWard(WardModel wardModel){
+        Ward ward = new Ward();
+        ward.setSize(wardModel.getSize());
+        ward.setType(wardModel.getType());
         wardRepository.save(ward);
-        return "ward added succesfuly";
+        return wardModel;
     }
 }

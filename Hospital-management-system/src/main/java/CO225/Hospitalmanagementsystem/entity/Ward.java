@@ -18,7 +18,7 @@ public class Ward {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long wardId;
-    private Integer size;
+    private int size;
     private  String type;
 
     @OneToMany(mappedBy = "ward")

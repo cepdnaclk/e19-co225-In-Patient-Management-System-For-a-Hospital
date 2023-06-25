@@ -15,16 +15,16 @@ public class UserInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String userName;
     private String password;
     private String roles;
-
+    private String email;
     private String birthDate; //format: dd/mm/year
     private String name;
     private Date startDate;
     private String nic;
-    private int wardno;
+
 
     @ManyToOne()
     @JoinColumn(
