@@ -32,11 +32,11 @@ function Adminsidebar() {
   const [open, setOpen] = useState(true);
   return (
    
-    <div className="flex">
+    <>
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } bg-blue-gray h-screen p-5  pt-8 relative duration-300`}
+        } bg-blue-gray h-screen p-5  pt-8 duration-300 fixed`}
       >
         <div className="flex gap-x-7 items-center">
         <FaHandHoldingMedical size={55} color="#e0e7ff"/>
@@ -62,10 +62,8 @@ function Adminsidebar() {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold ">Home Page</h1>
-      </div>
-    </div>
+      
+    </>
   );
 };
 
