@@ -3,21 +3,39 @@ import { useNavigate } from "react-router-dom";
 import EmployeeService from "../../services/EmployeeService";
 
 const AddStaffForm  = () => {
-  const [employee, setEmployee] = useState({g
-    firstName: "",
-    lastName: "",
-    emailId: "",
+  const [employee, setEmployee] = useState({
+    name: "",
+    userName: "",
+    password: "",
+    email: "",
+    roles: "",
+    nic: "",
+    wardNo: "",
+    birthDate: ""
   });
 
   const navigaye = useNavigate();
+  const [msg, setmsg] = useState(false);
 
   const handleChange = (e) => {
-    const value = e.target.value;
+    var value = e.target.value;
+    if (e.target.name=="wardNo"){
+        var intValue = parseInt(value, 10);
+        if (!isNaN(intValue) && Number.isInteger(intValue)) {
+            // The input value is a valid integer
+            console.log("Input value is an integer");
+            value = intValue;
+          } else {
+            // The input value is not an integer
+            console.log("Input value is not an integer");
+          }
+    }
     setEmployee({ ...employee, [e.target.name]: value });
   };
 
   const saveEmployee = (e) => {
     e.preventDefault();
+    reset(e);
     EmployeeService.saveEmployee(employee)
       .then((response) => {
         console.log(response);
@@ -31,52 +49,123 @@ const AddStaffForm  = () => {
   const reset = (e) => {
     e.preventDefault();
     setEmployee({
-      id: "",
-      firstName: "",
-      lastName: "",
-      emailId: "",
+        name: "",
+        userName: "",
+        password: "",
+        email: "",
+        roles: "",
+        nic: "",
+        wardNo: "",
+        birthDate: ""
     });
   };
 
   return (
     <div className="flex max-w-2xl mx-auto shadow border-b">
       <div className="px-8 py-8">
-        <div className="font-thin text-2xl tracking-wider">
+        {/* <div className="font-thin text-2xl tracking-wider">
           <h1>Add New Employee</h1>
-        </div>
+        </div> */}
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
-            First Name
+            Name
           </label>
           <input
             type="text"
-            name="firstName"
-            value={employee.firstName}
+            name="name"
+            value={employee.name}
             onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"></input>
         </div>
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
-            Last Name
+            User Name
           </label>
           <input
             type="text"
-            name="lastName"
-            value={employee.lastName}
+            name="userName"
+            value={employee.userName}
             onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"></input>
         </div>
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            value={employee.password}
+            onChange={(e) => handleChange(e)}
+            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+        </div>
+
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
             Email
           </label>
           <input
             type="email"
-            name="emailId"
-            value={employee.emailId}
+            name="email"
+            value={employee.email}
             onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"></input>
         </div>
+
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            NIC
+          </label>
+          <input
+            type="text"
+            name="nic"
+            value={employee.nic}
+            onChange={(e) => handleChange(e)}
+            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+        </div>
+
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            Role
+          </label>
+          <select className="h-10 w-96 border mt-2 px-2 py-2 block text-gray-600 text-sm font-normal" name="roles"  onChange={(e) => handleChange(e)}>
+            <option  className="block text-gray-600 text-sm font-normal" value={"ROLE_DOCTOR"}>Doctor</option>
+            <option  className="block text-gray-600 text-sm font-normal" value={"ROLE_CONSULTANT"}>Consultant</option>
+            <option  className="block text-gray-600 text-sm font-normal" value={"ROLE_NURSE"}>Nurse</option>
+            <option  className="block text-gray-600 text-sm font-normal" value={"ROLE_PHARMACIST"}>Pharmacist</option>
+            <option  className="block text-gray-600 text-sm font-normal" value={"ROLE_CLERKE"}>Admission clerke</option>
+          </select>
+          
+        </div>
+
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            Ward No
+          </label>
+          <input
+            type="number"
+            name="wardNo"
+            min = "2" max = "12"
+        
+            value={employee.wardNo}
+            onChange={(e) => handleChange(e)}
+            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+        </div>
+
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            Birth Date
+          </label>
+          <input
+            type="text"
+            name="birthDate"
+            value={employee.birthDate}
+            onChange={(e) => handleChange(e)}
+            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+        </div>
+
+
+
 
         <div className="items-center justify-center h-14 w-full my-4 space-x-4 pt-4">
           <button
