@@ -202,14 +202,10 @@ const AddStaffForm  = () => {
         <div className="items-center justify-center h-14 w-full my-4 space-x-4 pt-4">
           <button
             onClick={saveEmployee}
-            className="rounded text-white font-semibold bg-green-400 hover:bg-green-700 py-2 px-6">
-            Save
+            className="rounded text-white font-semibold bg-green-400 hover:bg-green-700  h-10 w-96 border mt-2 px-2 py-2">
+            ADD
           </button>
-          <button
-            onClick={reset}
-            className="rounded text-white font-semibold bg-red-400 hover:bg-red-700 py-2 px-6">
-            Clear
-          </button>
+          
         </div>
       </div>
     </div>
