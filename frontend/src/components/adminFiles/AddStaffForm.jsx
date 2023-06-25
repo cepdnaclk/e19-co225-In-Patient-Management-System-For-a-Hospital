@@ -63,7 +63,17 @@ const AddStaffForm  = () => {
         
       })
       .catch((error) => {
-        console.log(error);
+        console.log("detected");
+        setmsg("User with same user name exists");
+        setmsgVisible(true);
+       
+        setTimeout(() => {
+            setmsg("");
+            setmsgVisible(false);
+            
+            
+        }, 1500);
+        
       });
     }
   };
