@@ -11,11 +11,15 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(uniqueConstraints = {@UniqueConstraint(name = "UniqueUserName", columnNames = {"userName"})})
 public class UserInfo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_info_seq")
+    @SequenceGenerator(name = "user_info_seq", sequenceName = "user_info_seq", allocationSize = 1)
     private long id;
+    @Column(unique = true)
     private String userName;
     private String password;
     private String roles;

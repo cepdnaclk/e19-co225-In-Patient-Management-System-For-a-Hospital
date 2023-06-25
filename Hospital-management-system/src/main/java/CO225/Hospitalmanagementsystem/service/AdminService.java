@@ -33,6 +33,7 @@ public class AdminService {
         userInfo.setBirthDate(userInfoModel.getBirthDate());
         userInfo.setEmail(userInfoModel.getEmail());
         userInfo.setPassword(passwordEncoder.encode(userInfoModel.getPassword()));
+        userInfo.setRoles(userInfoModel.getRoles());
         int wardNo = userInfoModel.getWardNo();
         userInfo.setStartDate(new Date());
         Ward ward = wardRepository.getByWardId(wardNo);
