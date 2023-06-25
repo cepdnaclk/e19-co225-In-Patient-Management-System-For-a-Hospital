@@ -15,7 +15,9 @@ const AddStaffForm  = () => {
   });
 
   const navigaye = useNavigate();
-  const [msg, setmsg] = useState(false);
+  const [msg, setmsg] = useState("");
+  const [msgVisible, setmsgVisible] = useState(false);
+ 
 
   const handleChange = (e) => {
     var value = e.target.value;
@@ -35,15 +37,35 @@ const AddStaffForm  = () => {
 
   const saveEmployee = (e) => {
     e.preventDefault();
+    if(employee.wardNo<=1||employee.wardNo>15){
+        setmsg("Invalid ward number");
+        setmsgVisible(true);
+        setTimeout(() => {
+            setmsg("");
+            setmsgVisible(false);      
+        }, 1000);
+        
+    }else{
     reset(e);
     EmployeeService.saveEmployee(employee)
       .then((response) => {
         console.log(response);
+        setmsg("Saved successfully");
+        setmsgVisible(true);
+       
+        setTimeout(() => {
+            setmsg("");
+            setmsgVisible(false);
+            
+            
+        }, 1000);
+        
         
       })
       .catch((error) => {
         console.log(error);
       });
+    }
   };
 
   const reset = (e) => {
@@ -63,9 +85,9 @@ const AddStaffForm  = () => {
   return (
     <div className="flex max-w-2xl mx-auto shadow border-b">
       <div className="px-8 py-8">
-        {/* <div className="font-thin text-2xl tracking-wider">
-          <h1>Add New Employee</h1>
-        </div> */}
+        <div className={`${!msgVisible && "hidden"} font-thin text-2xl tracking-wider`}>
+          <h1>{msg}</h1>
+        </div> 
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
             Name
