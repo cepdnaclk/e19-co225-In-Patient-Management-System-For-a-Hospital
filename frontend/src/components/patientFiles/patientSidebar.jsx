@@ -1,13 +1,17 @@
-import { FaHandHoldingMedical } from "react-icons/fa";
-import React, { useState } from 'react';
-import { AiFillDashboard } from "react-icons/ai";
+import React from 'react';
 import { useNavigate } from "react-router-dom";
+
+import { AiFillDashboard } from "react-icons/ai";
+import { FaHandHoldingMedical } from "react-icons/fa";
+import { CgProfile } from "react-icons/Cg";
+
 
 function PatientSidebar(props) {
     const { isMobile } = props;
     const navigate = useNavigate();
     const Menus = [
         { title: "Dashboard", src: <AiFillDashboard size={30} />, path: "/patient/dashboard" },
+        { title: "Profile", src: <CgProfile size={30} />, path: "/patient/profile" },
     ];
 
     const navigateDashBoard = (e, path) => {
@@ -25,10 +29,10 @@ function PatientSidebar(props) {
                 </div>
                 <ul className="pt-6">
                     {Menus.map((Menu, index) => (
-                        <li key={index} className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"}  `}>
+                        <li key={index} onClick={(e, path) => navigateDashBoard(e, Menu.path)} className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"}  `}>
                             <span>{Menu.src}</span>
                             <span className={`${!open && "hidden"} origin-left duration-200`}>
-                                <a onClick={(e, path) => navigateDashBoard(e, Menu.path)}>{Menu.title}</a>
+                                <span>{Menu.title}</span>
                             </span>
                         </li>
                     ))}

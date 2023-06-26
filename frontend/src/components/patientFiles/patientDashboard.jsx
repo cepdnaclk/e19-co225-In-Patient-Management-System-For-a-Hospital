@@ -1,5 +1,8 @@
 import React from 'react';
 import PatientSidebar from './patientSidebar';
+import CircularProgressBar from "../widgets/circularProgress"
+
+import { AiOutlineUserAdd } from "react-icons/ai";
 
 function PatientDashboard(props) {
     const { isMobile } = props;
@@ -17,11 +20,10 @@ function PatientDashboard(props) {
                 {/* Section 2 - User Detail Section */}
                 <div className="bg-slate-300 p-6">
                     <div className="mb-12  grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+                        {/* item1 */}
                         <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                             <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="w-6 h-6 text-white">
-                                    <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd"></path>
-                                </svg>
+                                <AiOutlineUserAdd size={30} />
                             </div>
                             <div className="p-4 text-right">
                                 <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Patient Name</p>
@@ -33,9 +35,120 @@ function PatientDashboard(props) {
                                 </p>
                             </div>
                         </div>
+
+                        {/* item2 */}
+                        <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+                            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-pink-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+
+
+                            </div>
+                            <div className="p-4 text-right">
+                                <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">text1</p>
+                                <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">subtext1</h4>
+                            </div>
+                            <div className="border-t border-blue-gray-50 p-4">
+                                <p className="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                                    Any Detail Here
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* item1 */}
+                        <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+                            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+
+
+                            </div>
+                            <div className="p-4 text-right">
+                                <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Date Admitted</p>
+                                <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">2023/05/04</h4>
+                            </div>
+                            <div className="border-t border-blue-gray-50 p-4">
+                                <p className="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                                    Any Detail Here
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Item 04 */}
+                        <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+                            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-orange-600 to-orange-400 text-white shadow-orange-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+
+
+                            </div>
+                            <div className="p-4 text-right">
+                                <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Status</p>
+                                <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">Subtext2</h4>
+                            </div>
+                            <div className="border-t border-blue-gray-50 p-4">
+                                <p className="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                                    Any Detail Here
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    {/* User Detail Section Ends*/}
+
+                    {/*Section 3:  Body Temp, Sugar Level, Blood Pressure */}
+                    <div className="flex flex-wrap justify-center ">
+                        {/* Body Temperature */}
+                        <div className="ml-5 mr-5 max-w-sm">
+                            <div className="pt-5 pl-5 pr-10 pb-10 flex rounded-lg h-full bg-white flex-col">
+                                {/* Heading section */}
+                                <div className="flex items-center mb-3">
+                                    <span style={{ fontSize: 30, fontFamily: "monospace" }} >Body Temperature</span>
+                                </div>
+                                {/* Content Here */}
+                                <div className="pl-5 flex flex-col  flex-grow">
+                                    <div className='justify-between pb-5'>
+                                        <CircularProgressBar color={"red"} value={50} />
+                                    </div>
+                                    <span style={{ fontSize: 20 }}>Condition:</span>
+                                    <span style={{ fontSize: 20 }}>Accepted Level:</span>
+                                    <span style={{ fontSize: 20 }}>Any other:</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Sugar Level */}
+                        <div className=" ml-5 mr-5 max-w-sm">
+                            <div className="pt-5 pl-5 pr-10 pb-10 flex rounded-lg h-full bg-white flex-col">
+                                <div className="flex items-center mb-3">
+                                    <span style={{ fontSize: 30, fontFamily: "monospace" }}> Sugar Level</span>
+                                </div>
+                                <div className="pl-5 flex flex-col  flex-grow">
+                                    <div className='justify-between pb-5'>
+                                        <CircularProgressBar color={"blue"} value={70} />
+                                    </div>
+                                    <span style={{ fontSize: 20 }}>Condition:</span>
+                                    <span style={{ fontSize: 20 }}>Accepted Level:</span>
+                                    <span style={{ fontSize: 20 }}>Any other:</span>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Blood Pressure */}
+                        <div className=" ml-5 mr-5 max-w-sm">
+                            <div className="pt-5 pl-5 pr-10 pb-10 flex rounded-lg h-full bg-white flex-col">
+
+                                <div className="flex items-center mb-3">
+                                    <span style={{ fontSize: 30, fontFamily: "monospace" }}> Blood Pressure </span>
+                                </div>
+
+                                <div className="pl-5 flex flex-col  flex-grow">
+                                    <div className='justify-between pb-5'>
+                                        <CircularProgressBar color={"#5b3"} value={20} />
+                                    </div>
+                                    <span style={{ fontSize: 20 }}>Condition:</span>
+                                    <span style={{ fontSize: 20 }}>Accepted Level:</span>
+                                    <span style={{ fontSize: 20 }}>Any other:</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                {/* User Detail Section Ends*/}
+
+
 
 
 

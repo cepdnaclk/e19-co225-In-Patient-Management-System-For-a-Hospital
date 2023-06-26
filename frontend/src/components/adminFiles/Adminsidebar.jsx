@@ -7,9 +7,6 @@ import { RiHospitalFill } from "react-icons/ri";
 import { GiNurseFemale } from "react-icons/gi"; 
 import { GiStethoscope } from "react-icons/gi"; 
 import { useNavigate } from "react-router-dom";
-import Navbar from "../DashboardItems/Navibar";
-
-
 
 function Adminsidebar() {
   const navigate = useNavigate();

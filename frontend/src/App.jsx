@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Admin from './components/Admin';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 import PatientDashboard from './components/patientFiles/patientDashboard';
+import PatientProfile from './components/patientFiles/patientProfile';
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
@@ -33,6 +34,7 @@ function App() {
 
             <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
             <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />
+            <Route path="/patient/profile" element={<PatientProfile isMobile={isMobile} />} />
         </Routes>
     );
 }
