@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Admin from './components/Admin';
+import AdminDashboard from './components/adminFiles/displayDashboard';
+import AdminDoctors from './components/adminFiles/displayDoctors';
+import AdminNurses from './components/adminFiles/displayNurses';
+import AdminWards from './components/adminFiles/displayWards';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 
 import PatientDashboard from './components/patientFiles/patientDashboard';
@@ -32,8 +35,12 @@ function App() {
 
     return (
         <Routes>
-            <Route index element={<Admin />} />
-            <Route path="/" element={<Admin />} />
+            <Route index element={<AdminDashboard isMobile={isMobile} />} />
+            <Route path="/" element={<AdminDashboard isMobile={isMobile} />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
+            <Route path="/admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
+            <Route path="/admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
+            <Route path="/admin/wards" element={<AdminWards isMobile={isMobile} />} />
             <Route path="/admin/addStaff" element={<AdminAddStaff />} />
 
             <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
