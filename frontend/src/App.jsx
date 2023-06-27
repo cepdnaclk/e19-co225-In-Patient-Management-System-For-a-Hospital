@@ -14,7 +14,7 @@ import DoctorDashboard from './components/doctorFiles/doctorDashboard';
 import DoctorProfile from './components/doctorFiles/doctorProfile';
 
 function App() {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(false) ;
 
     useEffect(() => {
         const handleResize = () => {
