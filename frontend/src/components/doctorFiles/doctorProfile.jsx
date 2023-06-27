@@ -18,7 +18,11 @@ function DoctorProfile(props) {
                         <h2 className="text-2xl font-bold mb-4">Personal Information</h2>
                         <div>
                             <p>Doctor's name: John Doe</p>
+                            <p>Doctor's ID: 2</p>
+                            <p>Doctor's age: 35</p>
+                            <p>Home Address: Text here</p>
                             <p>Specialty: Cardiology</p>
+
                             {/* Add more personal information fields as needed */}
                         </div>
                     </section>
