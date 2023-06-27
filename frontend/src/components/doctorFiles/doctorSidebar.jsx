@@ -11,7 +11,7 @@ function DoctorSidebar(props) {
     const navigate = useNavigate();
     const Menus = [
         { title: "Dashboard", src: <AiFillDashboard size={30} />, path: "/doctor/dashboard" },
-//         { title: "Profile", src: <CgProfile size={30} />, path: "/doctor/profile" },
+        { title: "Profile", src: <CgProfile size={30} />, path: "/doctor/profile" },
 //         { title: "Patients", src: <CgProfile size={30} />, path: "/doctor/patients" },
     ];
 

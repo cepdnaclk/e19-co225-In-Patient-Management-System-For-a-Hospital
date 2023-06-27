@@ -7,7 +7,8 @@ import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 import PatientDashboard from './components/patientFiles/patientDashboard';
 import PatientProfile from './components/patientFiles/patientProfile';
 
-import DoctorDashboard from './components/doctorFiles/doctorDashboard'
+import DoctorDashboard from './components/doctorFiles/doctorDashboard';
+import DoctorProfile from './components/doctorFiles/doctorProfile';
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
@@ -41,6 +42,7 @@ function App() {
 
             <Route path="/doctor" element={<DoctorDashboard isMobile={isMobile} />} />
             <Route path="/doctor/dashboard" element={<DoctorDashboard isMobile={isMobile} />} />
+            <Route path="/doctor/profile" element={<DoctorProfile isMobile={isMobile} />} />
         </Routes>
     );
 }
