@@ -8,6 +8,7 @@ function AdminDashboard(props) {
   const totalDoctors = 87;  //Change where necessary
   const totalNurses = 152;
   const totalUsers = 249;
+  const totalwards = 24;
 
   return (
     <>
@@ -60,7 +61,7 @@ function AdminDashboard(props) {
               <div className="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
                 <div className="flex flex-row items-center">
                   <div className="flex-shrink pr-4">
-                    <div className="rounded-full p-5 bg-yellow-600">
+                    <div className="rounded-full p-5 bg-pink-600">
                       {/* image here */}
                     </div>
                   </div>
@@ -71,7 +72,31 @@ function AdminDashboard(props) {
                 </div>
               </div>
             </div>
+
+
+            <div className="w-full md:w-1/2 xl:w-1/3 p-6">
+              <div className="bg-gradient-to-b from-purple-200 to-yello-100 border-b-4 border-purple-500 rounded-lg shadow-xl p-5">
+              <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1228&q=80" alt="Image" className="w-80 h-40" />
+                <div className="flex flex-row items-center">
+                  <div className="flex-shrink pr-4">
+                    <div className="rounded-full p-5 bg-purple-600">
+                   
+                    </div>
+                  </div>
+                  <div className="flex-1 text-right md:text-center">
+                    <h2 className="font-bold uppercase text-gray-600">Total Wards</h2>
+                    <p className="font-bold text-3xl">{totalwards}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+
+
+
+
         </div>
 
         {/* Add content Here */}
