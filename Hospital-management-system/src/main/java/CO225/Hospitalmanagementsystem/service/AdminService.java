@@ -12,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AdminService {
@@ -34,7 +36,7 @@ public class AdminService {
         userInfo.setEmail(userInfoModel.getEmail());
         userInfo.setPassword(passwordEncoder.encode(userInfoModel.getPassword()));
         userInfo.setRoles(userInfoModel.getRoles());
-        int wardNo = userInfoModel.getWardNo();
+        long wardNo = userInfoModel.getWardNo();
         userInfo.setStartDate(new Date());
         Ward ward = wardRepository.getByWardId(wardNo);
         userInfo.setWard(ward);
@@ -48,5 +50,25 @@ public class AdminService {
         ward.setType(wardModel.getType());
         wardRepository.save(ward);
         return wardModel;
+    }
+
+
+    public List<UserInfoModel> getDoctors() {
+        List<UserInfo> doctorEntities = repository.findDoctors();
+        List <UserInfoModel> doctors = doctorEntities
+                .stream()
+                .map(doc -> new UserInfoModel(
+                        doc.getName(),
+                        doc.getUserName(),
+                        doc.getPassword(),
+                        doc.getEmail(),
+                        doc.getRoles(),
+                        doc.getNic(),
+                        doc.getWard().getWardId(),
+                        doc.getBirthDate()
+                )).collect(Collectors.toList());
+        return doctors;
+
+
     }
 }

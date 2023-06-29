@@ -6,11 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface  WardRepository extends JpaRepository <Ward, Integer> {
+public interface  WardRepository extends JpaRepository <Ward, Long> {
 
     @Query(
             value = "select * from Ward where ward_id = ?1",
             nativeQuery = true
     )
-    Ward getByWardId(int wardId);
+    Ward getByWardId(long wardId);
 }

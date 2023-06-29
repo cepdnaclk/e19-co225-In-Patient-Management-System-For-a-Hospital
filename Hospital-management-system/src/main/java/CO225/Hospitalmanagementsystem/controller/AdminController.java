@@ -1,13 +1,13 @@
 package CO225.Hospitalmanagementsystem.controller;
 
-import CO225.Hospitalmanagementsystem.entity.UserInfo;
-import CO225.Hospitalmanagementsystem.entity.Ward;
+
 import CO225.Hospitalmanagementsystem.model.UserInfoModel;
 import CO225.Hospitalmanagementsystem.model.WardModel;
 import CO225.Hospitalmanagementsystem.service.AdminService;
-import CO225.Hospitalmanagementsystem.service.WardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -29,6 +29,12 @@ public class AdminController {
     public UserInfoModel addNewUser(@RequestBody UserInfoModel userInfoModel){
         return adminService.addUser(userInfoModel);
       //  return "check";
+    }
+
+    @GetMapping("/doctors")
+    public List<UserInfoModel> getDoctors(){
+        return adminService.getDoctors();
+        //  return "check";
     }
 
     @PostMapping("/ward")

@@ -14,7 +14,7 @@ public class UserInfoModel {
     private String email;
     private String roles;
     private String nic;
-    private int wardNo;
+    private long wardNo;
     private String birthDate;
 
 
