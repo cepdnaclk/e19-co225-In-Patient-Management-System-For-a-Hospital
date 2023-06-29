@@ -10,13 +10,13 @@ import Navbar from "./Navbar";
 import AddStaffForm from "./AddStaffForm";
 import AdminSideBar from "./AdminSideBar";
 
-function AdminAddStaff() {
+function AdminAddStaff(props) {
 
 
   return (
     <>
       <div className="flex">
-        <AdminSideBar />
+        <AdminSideBar isMobile = {props}/>
         <div className="h-screen flex-1 p-7 ">
 
 

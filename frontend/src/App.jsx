@@ -41,7 +41,7 @@ function App() {
             <Route path="/admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
             <Route path="/admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
             <Route path="/admin/wards" element={<AdminWards isMobile={isMobile} />} />
-            <Route path="/admin/addStaff" element={<AdminAddStaff />} />
+            <Route path="/admin/addStaff" element={<AdminAddStaff isMobile = {isMobile} />} />
 
             <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
             <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />

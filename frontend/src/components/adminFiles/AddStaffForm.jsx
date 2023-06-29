@@ -8,7 +8,7 @@ const AddStaffForm = () => {
     userName: "",
     password: "",
     email: "",
-    roles: "",
+    roles: "ROLE_DOCTOR",
     nic: "",
     wardNo: "",
     birthDate: ""
@@ -21,6 +21,7 @@ const AddStaffForm = () => {
 
   const handleChange = (e) => {
     var value = e.target.value;
+    console.log(value, e.target.name)
     if (e.target.name == "wardNo") {
       var intValue = parseInt(value, 10);
       if (!isNaN(intValue) && Number.isInteger(intValue)) {
@@ -160,7 +161,8 @@ const AddStaffForm = () => {
           <label className="block text-gray-600 text-sm font-normal">
             Role
           </label>
-          <select className="h-10 w-96 border mt-2 px-2 py-2 block text-gray-600 text-sm font-normal" name="roles" onChange={(e) => handleChange(e)}>
+          <select className="h-10 w-96 border mt-2 px-2 py-2 block text-gray-600 text-sm font-normal" name="roles" value={employee.roles}
+           onChange={(e) => handleChange(e)}>
             <option className="block text-gray-600 text-sm font-normal" value={"ROLE_DOCTOR"}>Doctor</option>
             <option className="block text-gray-600 text-sm font-normal" value={"ROLE_CONSULTANT"}>Consultant</option>
             <option className="block text-gray-600 text-sm font-normal" value={"ROLE_NURSE"}>Nurse</option>
