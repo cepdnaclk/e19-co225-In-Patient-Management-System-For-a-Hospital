@@ -60,7 +60,7 @@ function AdminDashboard(props) {
               <div className="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
                 <div className="flex flex-row items-center">
                   <div className="flex-shrink pr-4">
-                    <div className="rounded-full p-5 bg-pink-600">
+                    <div className="rounded-full p-5 bg-yellow-600">
                       {/* image here */}
                     </div>
                   </div>
