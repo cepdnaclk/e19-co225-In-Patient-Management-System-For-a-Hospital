@@ -24,6 +24,8 @@ function AdminDashboard(props) {
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 xl:w-1/3 p-6">
               <div className="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
+              <img src="https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Image" className="w-80 h-40" />
+
                 <div className="flex flex-row items-center">
 
                   <div className="flex-shrink pr-4">
@@ -43,7 +45,8 @@ function AdminDashboard(props) {
 
             <div className="w-full md:w-1/2 xl:w-1/3 p-6">
               <div className="bg-gradient-to-b from-blue-200 to-blue-100 border-b-4 border-blue-500 rounded-lg shadow-xl p-5">
-                <div className="flex flex-row items-center">
+              <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1083&q=80" alt="Image" className="w-80 h-40" />
+                 <div className="flex flex-row items-center">
                   <div className="flex-shrink pr-4">
                     <div className="rounded-full p-5 bg-blue-600">
                       {/* image here */}
@@ -59,6 +62,7 @@ function AdminDashboard(props) {
 
             <div className="w-full md:w-1/2 xl:w-1/3 p-6">
               <div className="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
+              <img src="https://images.unsplash.com/photo-1606318313647-137d1f3b4d3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1177&q=80" alt="Image" className="w-80 h-40" />
                 <div className="flex flex-row items-center">
                   <div className="flex-shrink pr-4">
                     <div className="rounded-full p-5 bg-pink-600">
