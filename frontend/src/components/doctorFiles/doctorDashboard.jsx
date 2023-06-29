@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DoctorSidebar from './doctorSidebar';
 
 import { AiOutlineUserAdd } from "react-icons/ai";
@@ -7,6 +7,19 @@ function DoctorDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
     const totalPatients = 20;
+    const [profilePicture, setProfilePicture] = useState(null);
+
+    const handleProfilePictureChange = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            setProfilePicture(e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+    };
+
     return (
         <>
             <DoctorSidebar isMobile={isMobile} />
@@ -21,9 +34,20 @@ function DoctorDashboard(props) {
                     <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
                         {/* item1 */}
                         <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-                            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
-                                <AiOutlineUserAdd size={30} />
-                            </div>
+                            <label htmlFor="profilePictureUpload" className="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-8 grid h-32 w-32 place-items-center cursor-pointer">
+                                {profilePicture ? (
+                                    <img src={profilePicture} alt="Profile" className="object-cover w-30 h-30 rounded-full" />
+                                ) : (
+                                    <AiOutlineUserAdd size={50} />
+                                )}
+                            </label>
+                            <input
+                                id="profilePictureUpload"
+                                type="file"
+                                accept="image/*"
+                                onChange={handleProfilePictureChange}
+                                className="hidden"
+                            />
                             <div className="p-4 text-right">
                                 <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Doctor Name</p>
                                 <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">John Doe</h4>
