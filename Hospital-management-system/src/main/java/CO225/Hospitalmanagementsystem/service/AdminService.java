@@ -71,4 +71,21 @@ public class AdminService {
 
 
     }
+
+    public List<UserInfoModel> getNurses() {
+        List<UserInfo> nurseEntities = repository.findNurses();
+        List <UserInfoModel> nurses = nurseEntities
+                .stream()
+                .map(doc -> new UserInfoModel(
+                        doc.getName(),
+                        doc.getUserName(),
+                        doc.getPassword(),
+                        doc.getEmail(),
+                        doc.getRoles(),
+                        doc.getNic(),
+                        doc.getWard().getWardId(),
+                        doc.getBirthDate()
+                )).collect(Collectors.toList());
+        return nurses;
+    }
 }
