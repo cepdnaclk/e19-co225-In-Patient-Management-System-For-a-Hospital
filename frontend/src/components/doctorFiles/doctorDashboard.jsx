@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import DoctorSidebar from './doctorSidebar';
-
-import { AiOutlineUserAdd } from "react-icons/ai";
+import { AiOutlineUserAdd, AiOutlineMessage, AiOutlineBell } from "react-icons/ai";
 
 function DoctorDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
     const totalPatients = 20;
     const [profilePicture, setProfilePicture] = useState(null);
+    const [isOnDuty, setIsOnDuty] = useState(false);
 
     const handleProfilePictureChange = (event) => {
         const file = event.target.files[0];
@@ -18,6 +18,20 @@ function DoctorDashboard(props) {
         };
 
         reader.readAsDataURL(file);
+    };
+
+    const handleMessageAdmin = () => {
+        // Handle message to administration
+        console.log("Message to administration");
+    };
+
+    const handleViewNotifications = () => {
+        // Handle view notifications
+        console.log("View notifications");
+    };
+
+    const toggleDutyStatus = () => {
+        setIsOnDuty(!isOnDuty);
     };
 
     return (
@@ -73,12 +87,38 @@ function DoctorDashboard(props) {
                                         </div>
                                     </div>
                                     <div className="flex-1 text-right md:text-center">
-                                        <h2 className="font-bold uppercase text-gray-600">Total Patients to be watched</h2>
+                                        <h2 className="font-bold uppercase text-gray-600">Total Appointments</h2>
                                         <p className="font-bold text-3xl">{totalPatients}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Section 3 - Action Buttons */}
+                <div className="bg-white p-6">
+                    <div className="flex justify-center space-x-4">
+                        <button
+                            className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            onClick={handleMessageAdmin}
+                        >
+                            <AiOutlineMessage className="mr-2" /> Message Administration
+                        </button>
+                        <button
+                            className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            onClick={handleViewNotifications}
+                        >
+                            <AiOutlineBell className="mr-2" /> View Notifications
+                        </button>
+                        <button
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none ${
+                                isOnDuty ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+                            }`}
+                            onClick={toggleDutyStatus}
+                        >
+                            {isOnDuty ? 'Off Duty' : 'On Duty'}
+                        </button>
                     </div>
                 </div>
             </div>
