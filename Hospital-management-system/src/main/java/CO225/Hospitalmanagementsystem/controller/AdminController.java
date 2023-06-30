@@ -1,10 +1,12 @@
 package CO225.Hospitalmanagementsystem.controller;
 
 
+import CO225.Hospitalmanagementsystem.model.AuthRequest;
 import CO225.Hospitalmanagementsystem.model.UserInfoModel;
 import CO225.Hospitalmanagementsystem.model.WardModel;
 import CO225.Hospitalmanagementsystem.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,5 +48,18 @@ public class AdminController {
     public WardModel addNewWard(@RequestBody WardModel wardModel){
         return adminService.addWard(wardModel);
         //  return "check";
+    }
+
+
+    @PostMapping("/authenticate")
+    public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
+        if (authentication.isAuthenticated()) {
+            return jwtService.generateToken(authRequest.getUsername());
+        } else {
+            throw new UsernameNotFoundException("invalid user request !");
+        }
+
+
     }
 }
