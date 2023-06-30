@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import EmployeeService from "../../services/EmployeeService";
 import { DataGrid } from '@mui/x-data-grid';
 
-const DoctorsTable = () => {
+const DoctorsTable = (props) => {
+  const { isMobile } = props;
+  const open = isMobile;
+
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
-  const [employees, setEmployees] = useState(null);
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,24 +31,26 @@ const DoctorsTable = () => {
   }, []);
 
   const rows = [
-    { id: 1, col1: 'Hello', col2: 'World' },
+    { id: 1, col1: 'Hello', col2: 'Worldbhhhhhhhhhhhhhhhhhhhhhhh' },
     { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
     { id: 3, col1: 'MUI', col2: 'is Amazing' },
   ];
   
   const columns = [
-    { field: 'col1', headerName: 'name', width: 150 },
-    { field: 'col2', headerName: 'user name', width: 150 },
-    { field: 'col2', headerName: 'email', width: 150 },
-    {field: 'col2', headerName: 'ward no', width: 150 },
-    {field: 'col2', headerName: 'NIC', width: 150 },
-    {field: 'col2', headerName: 'Birth date', width: 150 },
+    { field: 'id', headerName: 'Doctor id', width: 80},
+
+    { field: 'name', headerName: 'name', width: 200},
+    { field: 'userName', headerName: 'user name', width: 200 },
+    { field: 'email', headerName: 'email', width: 200},
+    {field: 'wardNo', headerName: 'ward no', width: 100 },
+    {field: 'nic', headerName: 'NIC', width: 200 },
+    {field: 'birthDate', headerName: 'Birth date', width: 160 },
   ];
 
   return (
     // <div className="flex max-w-2xl mx-auto shadow border-b ">
-    <div className="flex w-full max-w-4xl mx-auto shadow border-b">
-      <DataGrid rows={rows} columns={columns}/>
+    <div className= {` ${open ? " w-[calc(100%-288px)]" : " w-[calc(100%-40px)]"} " w-full mx-auto shadow border-b"`}>
+      <DataGrid rows={employees} columns={columns} getRowId={(row)=>row.id}/>
     
     </div>
   )

@@ -13,7 +13,7 @@ function AdminAddStaff(props) {
         <div className= {` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`}>
 
 
-          <AddStaffForm />
+          <AddStaffForm isMobile={props} />
         </div>
       </div>
     </>

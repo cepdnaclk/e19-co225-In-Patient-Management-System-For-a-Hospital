@@ -3,21 +3,23 @@ import Navbar from "./Navbar";
 import Doctors from "./DoctorsTable";
 import AdminSideBar from "./AdminsideBar";
 
-function AdminAddStaff(props) {
+function AdminDoctors(props) {
+  const { isMobile } = props;
+  const open = isMobile;
 
 
   return (
     <>
       <div className="flex">
-        <AdminSideBar isMobile = {props}/>
-        <div className="h-screen flex-1 p-7 ">
+        <AdminSideBar isMobile={isMobile}/>
+        <div className={` ${{props} ? "left-72 w-[calc(100%-300px)]" : "left-20 w-[calc(100%-50px)]"} absolute p-2 m-2`}>
 
 
-          <Doctors />
+          <Doctors isMobile={isMobile} />
         </div>
       </div>
     </>
   );
 };
 
-export default AdminAddStaff;
+export default AdminDoctors;
