@@ -36,6 +36,11 @@ public class AdminController {
         return adminService.getDoctors();
         //  return "check";
     }
+    @GetMapping("/nurses")
+    public List<UserInfoModel> getNurses(){
+        return adminService.getNurses();
+        //  return "check";
+    }
 
     @PostMapping("/ward")
     public WardModel addNewWard(@RequestBody WardModel wardModel){

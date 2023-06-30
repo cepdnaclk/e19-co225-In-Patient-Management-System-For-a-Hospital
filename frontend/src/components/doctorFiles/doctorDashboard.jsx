@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DoctorSidebar from './doctorSidebar';
-
-import { AiOutlineUserAdd } from "react-icons/ai";
+import { AiOutlineUserAdd, AiOutlineMessage, AiOutlineBell } from "react-icons/ai";
 
 function DoctorDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
     const totalPatients = 20;
+    const [profilePicture, setProfilePicture] = useState(null);
+    const [isOnDuty, setIsOnDuty] = useState(false);
+
+    const handleProfilePictureChange = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            setProfilePicture(e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+    };
+
+    const handleMessageAdmin = () => {
+        // Handle message to administration
+        console.log("Message to administration");
+    };
+
+    const handleViewNotifications = () => {
+        // Handle view notifications
+        console.log("View notifications");
+    };
+
+    const toggleDutyStatus = () => {
+        setIsOnDuty(!isOnDuty);
+    };
+
     return (
         <>
             <DoctorSidebar isMobile={isMobile} />
@@ -21,9 +48,20 @@ function DoctorDashboard(props) {
                     <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
                         {/* item1 */}
                         <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-                            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
-                                <AiOutlineUserAdd size={30} />
-                            </div>
+                            <label htmlFor="profilePictureUpload" className="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-8 grid h-32 w-32 place-items-center cursor-pointer">
+                                {profilePicture ? (
+                                    <img src={profilePicture} alt="Profile" className="object-cover w-30 h-30 rounded-full" />
+                                ) : (
+                                    <AiOutlineUserAdd size={50} />
+                                )}
+                            </label>
+                            <input
+                                id="profilePictureUpload"
+                                type="file"
+                                accept="image/*"
+                                onChange={handleProfilePictureChange}
+                                className="hidden"
+                            />
                             <div className="p-4 text-right">
                                 <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Doctor Name</p>
                                 <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">John Doe</h4>
@@ -49,12 +87,38 @@ function DoctorDashboard(props) {
                                         </div>
                                     </div>
                                     <div className="flex-1 text-right md:text-center">
-                                        <h2 className="font-bold uppercase text-gray-600">Total Patients to be watched</h2>
+                                        <h2 className="font-bold uppercase text-gray-600">Total Appointments</h2>
                                         <p className="font-bold text-3xl">{totalPatients}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Section 3 - Action Buttons */}
+                <div className="bg-white p-6">
+                    <div className="flex justify-center space-x-4">
+                        <button
+                            className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            onClick={handleMessageAdmin}
+                        >
+                            <AiOutlineMessage className="mr-2" /> Message Administration
+                        </button>
+                        <button
+                            className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            onClick={handleViewNotifications}
+                        >
+                            <AiOutlineBell className="mr-2" /> View Notifications
+                        </button>
+                        <button
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none ${
+                                isOnDuty ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+                            }`}
+                            onClick={toggleDutyStatus}
+                        >
+                            {isOnDuty ? 'Off Duty' : 'On Duty'}
+                        </button>
                     </div>
                 </div>
             </div>

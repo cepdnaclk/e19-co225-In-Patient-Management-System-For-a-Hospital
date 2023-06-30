@@ -13,11 +13,14 @@ import PatientProfile from './components/patientFiles/patientProfile';
 import DoctorDashboard from './components/doctorFiles/doctorDashboard';
 import DoctorProfile from './components/doctorFiles/doctorProfile';
 
+
 import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
 
+
+
 function App() {
-    const [isMobile, setIsMobile] = useState(false) ;
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -44,7 +47,7 @@ function App() {
             <Route path="/admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
             <Route path="/admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
             <Route path="/admin/wards" element={<AdminWards isMobile={isMobile} />} />
-            <Route path="/admin/addStaff" element={<AdminAddStaff isMobile = {isMobile} />} />
+            <Route path="/admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
 
             <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
             <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />

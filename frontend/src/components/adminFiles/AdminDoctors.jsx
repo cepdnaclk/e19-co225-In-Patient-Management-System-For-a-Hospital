@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "./Navbar";
-import AddStaffForm from "./AddStaffForm";
-import AdminSideBar from "./AdminSideBar";
+import Doctors from "./DoctorsTable";
+import AdminSideBar from "./AdminsideBar";
 
 function AdminAddStaff(props) {
 
@@ -13,7 +13,7 @@ function AdminAddStaff(props) {
         <div className="h-screen flex-1 p-7 ">
 
 
-          <AddStaffForm />
+          <Doctors />
         </div>
       </div>
     </>
