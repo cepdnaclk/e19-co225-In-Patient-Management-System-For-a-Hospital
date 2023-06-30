@@ -7,6 +7,7 @@ function DoctorDashboard(props) {
     const open = isMobile;
     const totalPatients = 20;
     const [profilePicture, setProfilePicture] = useState(null);
+    const [isOnDuty, setIsOnDuty] = useState(false);
 
     const handleProfilePictureChange = (event) => {
         const file = event.target.files[0];
@@ -27,6 +28,10 @@ function DoctorDashboard(props) {
     const handleViewNotifications = () => {
         // Handle view notifications
         console.log("View notifications");
+    };
+
+    const toggleDutyStatus = () => {
+        setIsOnDuty(!isOnDuty);
     };
 
     return (
@@ -105,6 +110,14 @@ function DoctorDashboard(props) {
                             onClick={handleViewNotifications}
                         >
                             <AiOutlineBell className="mr-2" /> View Notifications
+                        </button>
+                        <button
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none ${
+                                isOnDuty ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+                            }`}
+                            onClick={toggleDutyStatus}
+                        >
+                            {isOnDuty ? 'Off Duty' : 'On Duty'}
                         </button>
                     </div>
                 </div>
