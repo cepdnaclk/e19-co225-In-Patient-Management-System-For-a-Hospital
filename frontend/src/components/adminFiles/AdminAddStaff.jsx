@@ -10,7 +10,7 @@ function AdminAddStaff(props) {
     <>
       <div className="flex">
         <AdminSideBar isMobile = {props}/>
-        <div className="h-screen flex-1 p-7 ">
+        <div className= {` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`}>
 
 
           <AddStaffForm />

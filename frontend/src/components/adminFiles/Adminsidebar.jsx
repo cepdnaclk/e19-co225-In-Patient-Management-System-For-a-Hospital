@@ -32,7 +32,7 @@ function Adminsidebar(props) {
     <>
       <div
         className={` ${open ? "w-72" : "w-20 "
-          } bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black h-screen p-5  pt-8 duration-300 fixed`}
+          } bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]  from-gray-700 via-gray-900 to-black h-screen p-5  pt-8 duration-300 fixed`}
       >
         <div className="flex gap-x-7 items-center">
           <FaHandHoldingMedical size={55} color="#e0e7ff" />

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import AdminDashboard from './components/adminFiles/displayDashboard';
-import AdminDoctors from './components/adminFiles/displayDoctors';
+// import AdminDoctors from './components/adminFiles/displayDoctors';
+import AdminDoctors from './components/adminFiles/AdminDoctors';
 import AdminNurses from './components/adminFiles/displayNurses';
 import AdminWards from './components/adminFiles/displayWards';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
