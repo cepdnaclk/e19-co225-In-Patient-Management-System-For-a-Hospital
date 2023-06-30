@@ -13,8 +13,8 @@ import PatientProfile from './components/patientFiles/patientProfile';
 import DoctorDashboard from './components/doctorFiles/doctorDashboard';
 import DoctorProfile from './components/doctorFiles/doctorProfile';
 
-import NurseDashboard from './components/nurseFiles/nurseDashboard';
-import NurseProfile from './components/nurseFiles/nurseProfile';
+import NurseDashboard from './components/NurseFiles/NurseDashboard';
+import NurseProfile from './components/NurseFiles/NurseProfile';
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
