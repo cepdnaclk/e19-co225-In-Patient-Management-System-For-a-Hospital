@@ -5,12 +5,13 @@ import { AiFillDashboard } from "react-icons/ai";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import { CgProfile } from "react-icons/Cg";
 
-function PatientSidebar(props) {
+function NurseSidebar(props) {
     const { isMobile } = props;
     const navigate = useNavigate();
     const Menus = [
-        { title: "Dashboard", src: <AiFillDashboard size={30} />, path: "/patient/dashboard" },
-        { title: "Profile", src: <CgProfile size={30} />, path: "/patient/profile" },
+        { title: "Dashboard", src: <AiFillDashboard size={30} />, path: "/nurse/dashboard" },
+        { title: "Profile", src: <CgProfile size={30} />, path: "/nurse/profile" },
+        //         { title: "Patients", src: <CgProfile size={30} />, path: "/doctor/patients" },
     ];
 
     const navigateDashBoard = (e, path) => {
@@ -41,4 +42,4 @@ function PatientSidebar(props) {
     );
 };
 
-export default PatientSidebar;
+export default NurseSidebar;
