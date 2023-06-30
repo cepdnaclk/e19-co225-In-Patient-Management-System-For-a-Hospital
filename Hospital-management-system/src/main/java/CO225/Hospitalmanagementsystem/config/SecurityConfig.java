@@ -64,11 +64,11 @@ public class SecurityConfig {
 //                 .build();
 
         DefaultSecurityFilterChain build = http.csrf().disable().authorizeHttpRequests()
-                .requestMatchers("/", "/admin/welcome", "/admin/staff", "admin/ward",
+                .requestMatchers("/", "/admin/welcome", "/admin/staff", "admin/ward", "admin/authenticate",
                         "admin/doctors"      ,"/addPatients","/records").permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/doctor").hasRole("DOCTOR")
-               // .authenticated()
+                .authorizeHttpRequests().requestMatchers("/doctor").authenticated()//hasRole("DOCTOR")
+//                for jwt token
                         .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -76,7 +76,7 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
-        //formLogin().and().build();
+       // .and().formLogin().and().build();
         return build;
 
 
