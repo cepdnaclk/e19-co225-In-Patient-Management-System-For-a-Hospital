@@ -7,7 +7,10 @@ import CO225.Hospitalmanagementsystem.model.WardModel;
 import CO225.Hospitalmanagementsystem.service.AdminService;
 import CO225.Hospitalmanagementsystem.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +23,11 @@ public class AdminController {
     AdminService adminService;
 //    @Autowired
 //    WardService wardService;
+    @Autowired
     private JwtService jwtService;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
 
 
@@ -55,15 +62,15 @@ public class AdminController {
     }
 
 
-//    @PostMapping("/authenticate")
-//    public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
-//        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
-//        if (authentication.isAuthenticated()) {
-//            return jwtService.generateToken(authRequest.getUsername());
-//        } else {
-//            throw new UsernameNotFoundException("invalid user request !");
-//        }
+    @PostMapping("/authenticate")
+    public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
+        if (authentication.isAuthenticated()) {
+            return jwtService.generateToken(authRequest.getUsername());
+        } else {
+            throw new UsernameNotFoundException("invalid user request !");
+        }
 //
 //
-//    }
+    }
 }
