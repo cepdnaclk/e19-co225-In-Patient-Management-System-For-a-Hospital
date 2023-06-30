@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bae6c121-3358-4fc8-a132-43701dfa5066" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/adminFiles/displayDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/adminFiles/displayDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/doctorFiles/doctorDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/doctorFiles/doctorDashboard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
