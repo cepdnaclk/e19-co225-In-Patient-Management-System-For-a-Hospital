@@ -5,7 +5,6 @@ import { AiFillDashboard } from "react-icons/ai";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import { CgProfile } from "react-icons/Cg";
 
-
 function PatientSidebar(props) {
     const { isMobile } = props;
     const navigate = useNavigate();
