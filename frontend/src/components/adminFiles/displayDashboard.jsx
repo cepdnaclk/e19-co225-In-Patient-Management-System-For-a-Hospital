@@ -1,5 +1,5 @@
 import React from 'react';
-import Adminsidebar from './AdminSideBar';
+import Adminsidebar from './AdminsideBar';
 
 function AdminDashboard(props) {
   const { isMobile } = props;
@@ -13,6 +13,7 @@ function AdminDashboard(props) {
   return (
     <>
       <Adminsidebar isMobile={isMobile} />
+      <h3 className='color: bg-white'> hello</h3>
       <div className={` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`}>
 
         <div className="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
