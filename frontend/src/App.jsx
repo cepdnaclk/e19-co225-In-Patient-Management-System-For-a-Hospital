@@ -17,6 +17,8 @@ import DoctorProfile from './components/doctorFiles/doctorProfile';
 import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
 
+import Login from './components/loginfiles/Login';
+
 function App() {
     const [isMobile, setIsMobile] = useState(false);
 
@@ -39,8 +41,9 @@ function App() {
 
     return (
         <Routes>
-            <Route index element={<AdminDashboard isMobile={isMobile} />} />
-            <Route path="/" element={<AdminDashboard isMobile={isMobile} />} />
+            <Route index element={<Login />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/admin" element={<AdminDashboard isMobile={isMobile} />} />
             <Route path="/admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
             <Route path="/admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
             <Route path="/admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
