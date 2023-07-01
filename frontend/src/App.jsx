@@ -16,7 +16,7 @@ import DoctorProfile from './components/doctorFiles/doctorProfile';
 
 import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
-
+import UnAuthorized from './components/unauthorized';
 import Login from './components/loginfiles/Login';
 
 function App() {
@@ -61,6 +61,8 @@ function App() {
             <Route path="/nurse" element={<NurseDashboard isMobile={isMobile} />} />
             <Route path="/nurse/dashboard" element={<NurseDashboard isMobile={isMobile} />} />
             <Route path="/nurse/profile" element={<NurseProfile isMobile={isMobile} />} />
+
+            <Route path="unauthorized" element={<UnAuthorized isMobile={isMobile} />} />
         </Routes>
     );
 }

@@ -86,7 +86,7 @@ const AddStaffForm = () => {
       userName: "",
       password: "",
       email: "",
-      roles: "",
+      roles: "ROLE_DOCTOR",
       nic: "",
       wardNo: "",
       birthDate: ""
