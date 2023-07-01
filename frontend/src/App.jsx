@@ -18,6 +18,10 @@ import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
 import UnAuthorized from './components/unauthorized';
 import Login from './components/loginfiles/Login';
+import test from './components/jwttest';
+import RequireAuth from './components/RequireAuth';
+
+
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
@@ -63,6 +67,10 @@ function App() {
             <Route path="/nurse/profile" element={<NurseProfile isMobile={isMobile} />} />
 
             <Route path="unauthorized" element={<UnAuthorized isMobile={isMobile} />} />
+
+            <Route element={<RequireAuth allowedRoles="ROLE_DOCTOR" />}>
+          <Route path="/test" element={<test />} /> </Route>
+        
         </Routes>
     );
 }
