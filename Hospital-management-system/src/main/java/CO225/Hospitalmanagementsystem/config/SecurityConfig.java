@@ -28,44 +28,15 @@ public class SecurityConfig {
     private JwtAuthFilter authFilter;
     @Bean
     public UserDetailsService userDetailsService(){
-//        UserDetails admin = User.withUsername("Admin")
-//                .password(encoder.encode("admin"))
-//                .roles("ADMIN")
-//                .build();
-//
-//        UserDetails doctor = User.withUsername("Doctor")
-//                .password(encoder.encode("1234"))
-//                .roles("DOCTOR")
-//                .build();
-//
-//        UserDetails user = User.withUsername("User")
-//                .password(encoder.encode("user"))
-//                .roles("USER")
-//                .build();
-//        return  new InMemoryUserDetailsManager(admin, user, doctor);
         return new UserInfoUserDetailsService();
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//         return http.csrf((csrf) -> csrf.disable())
-//                .authorizeHttpRequests((authorizeHttpRequests)->
-//                        authorizeHttpRequests
-//                                .requestMatchers("/", "/admin", "/admin/new").permitAll()
-//
-//                )
-//
-//                .authorizeHttpRequests((authorizeHttpRequests) ->
-//                        authorizeHttpRequests
-//                                .requestMatchers("/doctor").hasRole("DOCTOR")
-//
-//                        )
-//                .formLogin(Customizer.withDefaults())
-//                 .build();
 
         DefaultSecurityFilterChain build = http.csrf().disable().authorizeHttpRequests()
                 .requestMatchers("/", "/admin/welcome", "/admin/staff", "admin/ward", "admin/authenticate",
-                        "admin/doctors"      ,"/addPatients","/records").permitAll()
+                        "admin/doctors"      ,"/addPatients","/records", "/login").permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/doctor").authenticated()//hasRole("DOCTOR")
 //                for jwt token

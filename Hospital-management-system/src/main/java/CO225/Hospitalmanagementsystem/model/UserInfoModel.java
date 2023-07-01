@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserInfoModel {
+    private long id;
     private String name;
     private String userName;
     private  String password;

@@ -34,4 +34,11 @@ public interface UserInfoRepository extends JpaRepository <UserInfo, Long> {
     List<UserInfo> findNurses();
 
 
+
+
+    @Query(
+            value = "select roles from user_info where user_name = ?1",
+            nativeQuery = true
+    )
+    String getRolesByUserName(String username);
 }

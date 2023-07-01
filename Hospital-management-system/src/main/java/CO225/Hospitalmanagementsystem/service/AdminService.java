@@ -58,6 +58,7 @@ public class AdminService {
         List <UserInfoModel> doctors = doctorEntities
                 .stream()
                 .map(doc -> new UserInfoModel(
+                        doc.getId(),
                         doc.getName(),
                         doc.getUserName(),
                         doc.getPassword(),
@@ -66,6 +67,7 @@ public class AdminService {
                         doc.getNic(),
                         doc.getWard().getWardId(),
                         doc.getBirthDate()
+
                 )).collect(Collectors.toList());
         return doctors;
 
@@ -77,6 +79,7 @@ public class AdminService {
         List <UserInfoModel> nurses = nurseEntities
                 .stream()
                 .map(doc -> new UserInfoModel(
+                        doc.getId(),
                         doc.getName(),
                         doc.getUserName(),
                         doc.getPassword(),
