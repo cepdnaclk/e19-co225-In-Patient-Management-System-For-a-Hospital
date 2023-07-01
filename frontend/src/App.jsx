@@ -18,7 +18,7 @@ import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
 import UnAuthorized from './components/unauthorized';
 import Login from './components/loginfiles/Login';
-import test from './components/jwttest';
+import Test from './components/jwttest';
 import RequireAuth from './components/RequireAuth';
 import Layout from './components/Layout';
 
@@ -72,7 +72,8 @@ function App() {
             <Route path="unauthorized" element={<UnAuthorized isMobile={isMobile} />} />
 
             <Route element={<RequireAuth allowedRoles="ROLE_DOCTOR" />}>
-          <Route path="test" element={<test />} /> </Route>
+          <Route path="test" element={<AdminDashboard />} />
+          </Route>
           </Route>
         
         </Routes>

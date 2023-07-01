@@ -35,12 +35,16 @@ function Login() {
         LoginService.login(user)
         .then((response) => {
             console.log(response);
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            const id = response?.data?.id;
-            setAuth({ id, roles, accessToken });
-            reset(e);
+            const accessToken = response.accessToken;
+            const roles = response.roles;
+            const id = response.id;
+            setAuth({ "id":id, "roles":roles, "accessToken":accessToken });
+            setUser({
+                username: "",
+                password: "",
+            });
             navigate(from, { replace: true });
+            console.log(from);
         })
         .catch((e)=>{
             console.log(e);
