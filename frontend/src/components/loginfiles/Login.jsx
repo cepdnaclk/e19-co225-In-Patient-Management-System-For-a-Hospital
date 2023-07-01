@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { FaHandHoldingMedical } from "react-icons/fa";
 // import loginImage from './loginimage1.png';
 import loginImage from './loginimage2.jpg';
 import LoginService from "../../services/LoginService";
+import UseAuth from '../hooks/UseAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Login() {
+    const  {setAuth}  = UseAuth();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const [user, setUser] = useState({
         username: "",
         password: "",
       });
 
-    const navigaye = useNavigate();
+    const navigate = useNavigate();
     const handleChange = (e) => {
         var value = e.target.value
         setUser({ ...user, [e.target.name]: value });
@@ -20,8 +25,8 @@ function Login() {
 
     const reset = (e) => {
     e.preventDefault();
-    setEmployee({
-        userName: "",
+    setUser({
+        username: "",
         password: "",
     });
     };
@@ -30,6 +35,12 @@ function Login() {
         LoginService.login(user)
         .then((response) => {
             console.log(response);
+            const accessToken = response?.data?.accessToken;
+            const roles = response?.data?.roles;
+            const id = response?.data?.id;
+            setAuth({ id, roles, accessToken });
+            reset(e);
+            navigate(from, { replace: true });
         })
         .catch((e)=>{
             console.log(e);
