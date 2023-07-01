@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EmployeeService from "../../services/EmployeeService";
-import { DataGrid } from '@mui/x-data-grid';
-import { styled } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
-import Box from '@mui/material/Box';
+//import { DataGrid } from '@mui/x-data-grid';
+//import { styled } from '@mui/material/styles';
+//import { grey } from '@mui/material/colors';
+//import Box from '@mui/material/Box';
 
 const DoctorsTable = (props) => {
   const { isMobile } = props;
