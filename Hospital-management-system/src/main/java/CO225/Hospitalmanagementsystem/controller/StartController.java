@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class StartController {
 
@@ -41,8 +42,10 @@ public class StartController {
             if (authentication.isAuthenticated()) {
                 String acessToken = jwtService.generateToken(authRequest.getUsername());
                 String roles = userInfoRepository.getRolesByUserName(authRequest.getUsername());
+                Long id = userInfoRepository.getIdByUserName(authRequest.getUsername());
                 tokenModel.setAccessToken(acessToken);
                 tokenModel.setRoles(roles);
+                tokenModel.setId(id);
                 return tokenModel;
             } else {
                 tokenModel.setAccessToken("");

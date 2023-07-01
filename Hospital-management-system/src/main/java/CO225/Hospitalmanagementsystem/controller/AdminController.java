@@ -2,6 +2,7 @@ package CO225.Hospitalmanagementsystem.controller;
 
 
 import CO225.Hospitalmanagementsystem.model.AuthRequest;
+import CO225.Hospitalmanagementsystem.model.CountModel;
 import CO225.Hospitalmanagementsystem.model.UserInfoModel;
 import CO225.Hospitalmanagementsystem.model.WardModel;
 import CO225.Hospitalmanagementsystem.service.AdminService;
@@ -52,6 +53,11 @@ public class AdminController {
     @GetMapping("/nurses")
     public List<UserInfoModel> getNurses(){
         return adminService.getNurses();
+        //  return "check";
+    }
+    @GetMapping("/staffCount")
+    public CountModel getStaffCount(){
+        return adminService.getStaffCount();
         //  return "check";
     }
 

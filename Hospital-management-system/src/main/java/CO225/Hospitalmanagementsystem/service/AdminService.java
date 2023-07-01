@@ -2,6 +2,7 @@ package CO225.Hospitalmanagementsystem.service;
 
 import CO225.Hospitalmanagementsystem.entity.UserInfo;
 import CO225.Hospitalmanagementsystem.entity.Ward;
+import CO225.Hospitalmanagementsystem.model.CountModel;
 import CO225.Hospitalmanagementsystem.model.UserInfoModel;
 import CO225.Hospitalmanagementsystem.model.WardModel;
 import CO225.Hospitalmanagementsystem.repository.UserInfoRepository;
@@ -90,5 +91,20 @@ public class AdminService {
                         doc.getBirthDate()
                 )).collect(Collectors.toList());
         return nurses;
+    }
+
+    public CountModel getStaffCount() {
+        int doctors = repository.getDoctorCount();
+        int nurses = repository.getNurseCount();
+        int clerks = repository.getClerkCount();
+        int patients = 0;
+        int wards = 0;
+        CountModel countModel = new CountModel();
+        countModel.setClerks(clerks);
+        countModel.setNurses(nurses);
+        countModel.setDoctors(doctors);
+        countModel.setWards(wards);
+        countModel.setPatients(patients);
+        return countModel;
     }
 }

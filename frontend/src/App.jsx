@@ -18,8 +18,9 @@ import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
 import UnAuthorized from './components/unauthorized';
 import Login from './components/loginfiles/Login';
-import test from './components/jwttest';
+import Test from './components/jwttest';
 import RequireAuth from './components/RequireAuth';
+import Layout from './components/Layout';
 
 
 
@@ -45,14 +46,16 @@ function App() {
 
     return (
         <Routes>
-            <Route index element={<Login />} />
+            
             <Route path="/" element={<Login />} />
-            <Route path="/admin" element={<AdminDashboard isMobile={isMobile} />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
-            <Route path="/admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
-            <Route path="/admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
-            <Route path="/admin/wards" element={<AdminWards isMobile={isMobile} />} />
-            <Route path="/admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
+            <Route path="/" element={<Layout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="admin" element={<AdminDashboard isMobile={isMobile} />} />
+            <Route path="admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
+            <Route path="admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
+            <Route path="admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
+            <Route path="admin/wards" element={<AdminWards isMobile={isMobile} />} />
+            <Route path="admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
 
             <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
             <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />
@@ -69,7 +72,9 @@ function App() {
             <Route path="unauthorized" element={<UnAuthorized isMobile={isMobile} />} />
 
             <Route element={<RequireAuth allowedRoles="ROLE_DOCTOR" />}>
-          <Route path="/test" element={<test />} /> </Route>
+          <Route path="test" element={<AdminDashboard />} />
+          </Route>
+          </Route>
         
         </Routes>
     );
