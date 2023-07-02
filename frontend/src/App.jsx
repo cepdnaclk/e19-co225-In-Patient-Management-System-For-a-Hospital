@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import AdminDoctors from './components/adminFiles/displayDoctors';
 import AdminDashboard from './components/adminFiles/AdminDashboard';
 import AdminDoctors from './components/adminFiles/AdminDoctors';
-import AdminNurses from './components/adminFiles/displayNurses';
+import AdminNurses from './components/adminFiles/AdminNurses';
 import AdminWards from './components/adminFiles/displayWards';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 

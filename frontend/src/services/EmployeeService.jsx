@@ -10,6 +10,13 @@ class EmployeeService {
   getDoctors(){
     return axios.get(EMPLOYEE_DOCTORS_API_BASE_URL)
   }
+  getNurses(){
+    return axios.get(ADMIN_API_BASE_URL+"/nurses")
+  }
+
+  getClerks(){
+    return axios.get(ADMIN_API_BASE_URL+"/clerks")
+  }
   getCount(){
     return axios.get(ADMIN_API_BASE_URL+"/staffCount")
   }
