@@ -1,29 +1,63 @@
+import React from "react";
 import { Box, Button, TextField, MenuItem } from "@mui/material";
-import { Formik } from "formik";
+import { Field, Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Header from "../../components/Header";
+import Header from "../Header";
+import EmployeeService from "../../services/EmployeeService";
 
 const Form = () => {
+  
+ 
+
+//   const checkoutSchema = yup.object().shape({
+//     name: yup.string().required("Name is required"),
+//     userName: yup.string().required("User Name is required"),
+//     email: yup.string().email("Invalid email").required("Email is required"),
+//     password: yup.string().required("Password is required"),
+//     roles: yup.string().required("Roles is required"),
+//     nic: yup.string().required("NIC is required"),
+//     wardNo: yup.string().required("Ward is required"),
+//     birthDate: yup.string().required("Birth date is required"),
+//   });
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = (values) => {
+    const handles = (values) => {  
     console.log(values);
+    
+    //  EmployeeService.saveEmployee(values)
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error detected:", error);
+    //   });
   };
+
+
+//   const initialValues = {
+//     name: "",
+//     userName: "",
+//     password: "",
+//     email: "",
+//     roles: "",
+//     nic: "",
+//     wardNo: "",
+//     birthDate: ""
+//   };
   const roleOptions = [
+    { label: "Admin", value: "ROLE_ADMIN" },
     { label: "Doctor", value: "ROLE_DOCTOR" },
     { label: "Nurse", value: "ROLE_NURSE" },
     { label: "Clerk", value: "ROLE_CLERKE" },
-   
-    
   ];
 
   return (
     <Box m="20px">
-      <Header title="ADD TO STAFF" subtitle="Add new medical offficer" />
+      <Header title="CREATE USER" subtitle="Create a New User Profile" />
 
       <Formik
-        onSubmit={handleFormSubmit}
+        onSubmit={handles}
         initialValues={initialValues}
         validationSchema={checkoutSchema}
       >
@@ -57,7 +91,6 @@ const Form = () => {
                 helperText={touched.name && errors.name}
                 sx={{ gridColumn: "span 2" }}
               />
-              
               <TextField
                 fullWidth
                 variant="filled"
@@ -75,19 +108,6 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.password}
-                name="password"
-                error={touched.password && errors.password}
-                helperText={touched.password && errors.password}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
                 label="Email"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -95,20 +115,6 @@ const Form = () => {
                 name="email"
                 error={touched.email && errors.email}
                 helperText={touched.email && errors.email}
-                sx={{ gridColumn: "span 4" }}
-              />
-              
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="National Identify Card number"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.nic}
-                name="nic"
-                error={touched.nic && errors.nic}
-                helperText={touched.nic && errors.nic}
                 sx={{ gridColumn: "span 4" }}
               />
               <TextField
@@ -123,7 +129,7 @@ const Form = () => {
               name="roles"
               error={touched.roles && !!errors.roles}
               helperText={touched.roles && errors.roles}
-              sx={{ gridColumn: "span 2" }}
+              sx={{ gridColumn: "span 4" }}
               >
                 {/* {roleOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -137,8 +143,25 @@ const Form = () => {
       {option.label}
     </MenuItem>
   ))}
-        
+             {/* <option  value={"ROLE_DOCTOR"}>Doctor</option>
+            <option  value={"ROLE_CONSULTANT"}>Consultant</option>
+            <option  value={"ROLE_NURSE"}>Nurse</option>
+            <option value={"ROLE_PHARMACIST"}>Pharmacist</option>
+            <option  value={"ROLE_CLERKE"}>Admission clerke</option> */}
               </TextField>
+              <TextField
+                fullWidth
+                variant="filled"
+                type="text"
+                label="National Identify Card number"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.nic}
+                name="nic"
+                error={touched.nic && errors.nic}
+                helperText={touched.nic && errors.nic}
+                sx={{ gridColumn: "span 4" }}
+              />
               <TextField
                 fullWidth
                 variant="filled"
@@ -150,7 +173,7 @@ const Form = () => {
                 name="wardNo"
                 error={touched.wardNo && errors.wardNo}
                 helperText={touched.wardNo && errors.wardNo}
-                sx={{ gridColumn: "span 2" }}
+                sx={{ gridColumn: "span 4" }}
               />
               <TextField
                 fullWidth
@@ -166,9 +189,9 @@ const Form = () => {
                 sx={{ gridColumn: "span 4" }}
               />
             </Box>
-            <Box display="flex" justifyContent="end" mt="20px">
+            <Box display="flex" justifyContent="flex-end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
-                Create New User
+                Add to staff
               </Button>
             </Box>
           </form>
@@ -178,23 +201,18 @@ const Form = () => {
   );
 };
 
-const phoneRegExp =
-  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
 const checkoutSchema = yup.object().shape({
     name: yup.string().required("Name is required"),
     userName: yup.string().required("User Name is required"),
     email: yup.string().email("Invalid email").required("Email is required"),
     password: yup.string().required("Password is required"),
-    wardNo: yup.number().required("Ward is required"),
-    birthDate: yup.string().required("Birth date is required"),
     roles: yup.string().required("Roles is required"),
     nic: yup.string().required("NIC is required"),
-    
- 
-  
-});
-const initialValues = {
+    wardNo: yup.string().required("Ward is required"),
+    birthDate: yup.string().required("Birth date is required"),
+  });
+
+  const initialValues = {
     name: "",
     userName: "",
     password: "",
@@ -203,6 +221,6 @@ const initialValues = {
     nic: "",
     wardNo: "",
     birthDate: ""
-};
+  };
 
 export default Form;
