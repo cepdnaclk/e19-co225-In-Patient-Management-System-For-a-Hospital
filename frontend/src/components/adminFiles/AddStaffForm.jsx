@@ -108,7 +108,7 @@ const AddStaffForm = () => {
             name="name"
             value={employee.name}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
@@ -119,7 +119,7 @@ const AddStaffForm = () => {
             name="userName"
             value={employee.userName}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
@@ -130,7 +130,7 @@ const AddStaffForm = () => {
             name="password"
             value={employee.password}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
 
         <div className="items-center justify-center h-14 w-full my-4">
@@ -142,7 +142,7 @@ const AddStaffForm = () => {
             name="email"
             value={employee.email}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
 
         <div className="items-center justify-center h-14 w-full my-4">
@@ -154,20 +154,20 @@ const AddStaffForm = () => {
             name="nic"
             value={employee.nic}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
 
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal">
             Role
           </label>
-          <select className="h-10 w-96 border mt-2 px-2 py-2 block text-gray-600 text-sm font-normal" name="roles" value={employee.roles}
-           onChange={(e) => handleChange(e)}>
-            <option className="block text-gray-600 text-sm font-normal" value={"ROLE_DOCTOR"}>Doctor</option>
-            <option className="block text-gray-600 text-sm font-normal" value={"ROLE_CONSULTANT"}>Consultant</option>
-            <option className="block text-gray-600 text-sm font-normal" value={"ROLE_NURSE"}>Nurse</option>
-            <option className="block text-gray-600 text-sm font-normal" value={"ROLE_PHARMACIST"}>Pharmacist</option>
-            <option className="block text-gray-600 text-sm font-normal" value={"ROLE_CLERKE"}>Admission clerke</option>
+          <select className="h-10 w-96 border mt-2 px-2 py-2 block text-gray-600 text-sm font-normal text-black" name="roles" value={employee.roles}
+            onChange={(e) => handleChange(e)}>
+            <option className="block text-gray-600 text-sm font-normal text-black" value={"ROLE_DOCTOR"}>Doctor</option>
+            <option className="block text-gray-600 text-sm font-normal text-black" value={"ROLE_CONSULTANT"}>Consultant</option>
+            <option className="block text-gray-600 text-sm font-normal text-black" value={"ROLE_NURSE"}>Nurse</option>
+            <option className="block text-gray-600 text-sm font-normal text-black" value={"ROLE_PHARMACIST"}>Pharmacist</option>
+            <option className="block text-gray-600 text-sm font-normal text-black" value={"ROLE_CLERKE"}>Admission clerke</option>
           </select>
 
         </div>
@@ -183,7 +183,7 @@ const AddStaffForm = () => {
 
             value={employee.wardNo}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
 
         <div className="items-center justify-center h-14 w-full my-4">
@@ -195,7 +195,7 @@ const AddStaffForm = () => {
             name="birthDate"
             value={employee.birthDate}
             onChange={(e) => handleChange(e)}
-            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+            className="h-10 w-96 border mt-2 px-2 py-2 text-black"></input>
         </div>
 
 
