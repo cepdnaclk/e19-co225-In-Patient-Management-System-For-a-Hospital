@@ -13,6 +13,9 @@ class EmployeeService {
   getCount(){
     return axios.get(ADMIN_API_BASE_URL+"/staffCount")
   }
+  getadmitData(){
+    return axios.get(ADMIN_API_BASE_URL+"/admitData")
+  }
 
 }
 

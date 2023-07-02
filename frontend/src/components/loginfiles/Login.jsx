@@ -1,57 +1,54 @@
 import React, { useState } from "react";
 
 import { FaHandHoldingMedical } from "react-icons/fa";
-// import loginImage from './loginimage1.png';
-import loginImage from './loginimage2.jpg';
+import loginImage from './loginimage.png';
 import LoginService from "../../services/LoginService";
 import UseAuth from '../hooks/UseAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Login() {
-    const  {setAuth}  = UseAuth();
+    const { setAuth } = UseAuth();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     const [user, setUser] = useState({
         username: "",
         password: "",
-      });
+    });
 
     const navigate = useNavigate();
     const handleChange = (e) => {
         var value = e.target.value
         setUser({ ...user, [e.target.name]: value });
-      };
+    };
 
     const reset = (e) => {
-    e.preventDefault();
-    setUser({
-        username: "",
-        password: "",
-    });
+        e.preventDefault();
+        setUser({
+            username: "",
+            password: "",
+        });
     };
-    const login = (e) =>{
+    const login = (e) => {
         e.preventDefault();
         LoginService.login(user)
-        .then((response) => {
-            console.log(response);
-            const accessToken = response.accessToken;
-            const roles = response.roles;
-            const id = response.id;
-            setAuth({ "id":id, "roles":roles, "accessToken":accessToken });
-            setUser({
-                username: "",
-                password: "",
-            });
-            navigate(from, { replace: true });
-            console.log(from);
-        })
-        .catch((e)=>{
-            console.log(e);
-        }) 
-        }
-
-    
+            .then((response) => {
+                console.log(response);
+                const accessToken = response.accessToken;
+                const roles = response.roles;
+                const id = response.id;
+                setAuth({ "id": id, "roles": roles, "accessToken": accessToken });
+                setUser({
+                    username: "",
+                    password: "",
+                });
+                navigate(from, { replace: true });
+                console.log(from);
+            })
+            .catch((e) => {
+                console.log(e);
+            })
+    }
 
     return (
         <section className=" select-none h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
@@ -65,17 +62,17 @@ function Login() {
                     <FaHandHoldingMedical size={80} color="#ff3456" />
                     <p className="mx-4 mb-0 text-center font-semibold text-slate-500 text-6xl">MEDNET</p>
                 </div>
-                <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded" 
-                name='username' onChange={(e)=>handleChange(e)} type="text" placeholder="Username" />
+                <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
+                    name='username' onChange={(e) => handleChange(e)} type="text" placeholder="Username" />
                 <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
-                name='password' onChange={(e)=>handleChange(e)} type="password" placeholder="Password" />
+                    name='password' onChange={(e) => handleChange(e)} type="password" placeholder="Password" />
                 <div className="text-center md:text-left">
                     <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2
-                     text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={(e)=>login(e)}>Login</button>
+                     text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={(e) => login(e)}>Login</button>
                 </div>
             </div>
         </section>
     );
-    }
+}
 
 export default Login;

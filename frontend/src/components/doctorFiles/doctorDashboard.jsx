@@ -64,8 +64,14 @@ function DoctorDashboard(props) {
   return (
     <>
       <DoctorSidebar isMobile={isMobile} />
+
       <div className={` ${open ? 'left-72 w-[calc(100%-288px)]' : 'left-20 w-[calc(100%-80px)]'} absolute p-2`} style={{ backgroundColor: 'red' }}>
         <div className="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={{ borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
+
+      <div className={` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`}>
+        {/* Section 1 - Dashboard Heading */}
+        <div className="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
+
           <h1 className="font-bold pl-2"> Dashboard </h1>
         </div>
 
@@ -138,9 +144,13 @@ function DoctorDashboard(props) {
               <AiOutlineBell className="mr-2" /> View Notifications
             </button>
             <button
+
               className={`flex items-center px-4 py-2 text-sm font-medium text-white rounded-md focus:outline-none ${
                 isOnDuty ? 'bg-red-500' : 'bg-green-500'
               }`}
+
+              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none ${isOnDuty ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+                }`}
               onClick={toggleDutyStatus}
             >
               <AiOutlineCalendar className="mr-2" /> {isOnDuty ? 'Off Duty' : 'On Duty'}

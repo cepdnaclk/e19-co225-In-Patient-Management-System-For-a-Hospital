@@ -13,4 +13,10 @@ public interface  WardRepository extends JpaRepository <Ward, Long> {
             nativeQuery = true
     )
     Ward getByWardId(long wardId);
+
+    @Query(
+            value = "select COUNT(*) from ward",
+            nativeQuery = true
+    )
+     int getCount();
 }
