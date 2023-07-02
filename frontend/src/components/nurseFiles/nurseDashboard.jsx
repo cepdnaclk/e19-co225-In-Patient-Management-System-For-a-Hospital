@@ -8,11 +8,11 @@ function NurseDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
     const totalPatients = 20;
-    const totalWards=3;
+    const totalWards = 3;
     return (
         <>
             <NurseSidebar isMobile={isMobile} />
-            <div className={` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`} style={{ backgroundColor: "red" }}>
+            <div className={` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`}>
                 {/* Section 1 - Dashboard Heading */}
                 <div className="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
                     <h1 className="font-bold pl-2"> Dashboard </h1>
@@ -37,55 +37,55 @@ function NurseDashboard(props) {
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="bg-gray-100 p-6">
-                    {/* Doctors, Nurse, User count */}
-                    <div className="flex flex-wrap">
-                        <div className="w-full md:w-1/2 xl:w-1/3 p-6">
-                            <div className="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
-                                <div className="flex flex-row items-center">
-                                    <div className="flex-shrink pr-4">
-                                        <div className="rounded-full p-5 bg-green-600">
-                                            {/* image here */}
+
+                    <div className="bg-gray-100 p-6">
+                        {/* Doctors, Nurse, User count */}
+                        <div className="flex flex-wrap">
+                            <div className="w-full md:w-1/2 xl:w-1/3 p-6">
+                                <div className="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
+                                    <div className="flex flex-row items-center">
+                                        <div className="flex-shrink pr-4">
+                                            <div className="rounded-full p-5 bg-green-600">
+                                                {/* image here */}
+                                            </div>
                                         </div>
+                                        <div className="flex-1 text-right md:text-center">
+                                            <h2 className="font-bold uppercase text-gray-600">Total Patients to be watched</h2>
+                                            <p className="font-bold text-3xl">{totalPatients}</p>
+                                        </div>
+
                                     </div>
-                                    <div className="flex-1 text-right md:text-center">
-                                        <h2 className="font-bold uppercase text-gray-600">Total Patients to be watched</h2>
-                                        <p className="font-bold text-3xl">{totalPatients}</p>
-                                    </div>
-                                   
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                
-                <div className="bg-gray-100 p-6">
-                    {/* Doctors, Nurse, User count */}
-                    <div className="flex flex-wrap">
-                        <div className="w-full md:w-1/2 xl:w-1/3 p-6">
-                            <div className="bg-gradient-to-b from-purple-200 to-purple-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
-                                <div className="flex flex-row items-center">
-                                    <div className="flex-shrink pr-4">
-                                        <div className="rounded-full p-5 bg-blue-600">
-                                            {/* image here */}
+
+                    <div className="bg-gray-100 p-6">
+                        {/* Doctors, Nurse, User count */}
+                        <div className="flex flex-wrap">
+                            <div className="w-full md:w-1/2 xl:w-1/3 p-6">
+                                <div className="bg-gradient-to-b from-purple-200 to-purple-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
+                                    <div className="flex flex-row items-center">
+                                        <div className="flex-shrink pr-4">
+                                            <div className="rounded-full p-5 bg-blue-600">
+                                                {/* image here */}
+                                            </div>
                                         </div>
+                                        <div className="flex-1 text-right md:text-center">
+                                            <h2 className="font-bold uppercase text-gray-600">Total Wards to be Attend</h2>
+                                            <p className="font-bold text-3xl">{totalWards}</p>
+                                        </div>
+
+
                                     </div>
-                                    <div className="flex-1 text-right md:text-center">
-                                        <h2 className="font-bold uppercase text-gray-600">Total Wards to be Attend</h2>
-                                        <p className="font-bold text-3xl">{totalWards}</p>
-                                    </div>
-           
-                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-              
         </>
     );
 }
