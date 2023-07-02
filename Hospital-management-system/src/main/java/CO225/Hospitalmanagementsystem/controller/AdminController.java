@@ -1,10 +1,7 @@
 package CO225.Hospitalmanagementsystem.controller;
 
 
-import CO225.Hospitalmanagementsystem.model.AuthRequest;
-import CO225.Hospitalmanagementsystem.model.CountModel;
-import CO225.Hospitalmanagementsystem.model.UserInfoModel;
-import CO225.Hospitalmanagementsystem.model.WardModel;
+import CO225.Hospitalmanagementsystem.model.*;
 import CO225.Hospitalmanagementsystem.service.AdminService;
 import CO225.Hospitalmanagementsystem.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +11,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -64,6 +63,12 @@ public class AdminController {
     @PostMapping("/ward")
     public WardModel addNewWard(@RequestBody WardModel wardModel){
         return adminService.addWard(wardModel);
+        //  return "check";
+    }
+
+    @GetMapping("/admitData")
+    public List<Map<Date, Integer>>  getData(){
+        return adminService.getAdmitDateCount();
         //  return "check";
     }
 
