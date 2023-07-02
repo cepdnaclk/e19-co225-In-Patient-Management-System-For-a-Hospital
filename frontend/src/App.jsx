@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import AdminDashboard from './components/adminFiles/displayDashboard';
+// import AdminDashboard from './components/adminFiles/displayDashboard';
 // import AdminDoctors from './components/adminFiles/displayDoctors';
+import AdminDashboard from './components/adminFiles/AdminDashboard';
 import AdminDoctors from './components/adminFiles/AdminDoctors';
 import AdminNurses from './components/adminFiles/displayNurses';
 import AdminWards from './components/adminFiles/displayWards';
@@ -22,6 +23,15 @@ import Test from './components/jwttest';
 import RequireAuth from './components/RequireAuth';
 import Layout from './components/Layout';
 
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 
 function App() {
@@ -45,6 +55,8 @@ function App() {
     }, []);
 
     return (
+        <ThemeProvider theme={darkTheme}>
+              <CssBaseline />
         <Routes>
             
             <Route path="/" element={<Login />} />
@@ -77,6 +89,7 @@ function App() {
           </Route>
         
         </Routes>
+        </ThemeProvider>
     );
 }
 

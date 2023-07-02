@@ -6,6 +6,10 @@ import { DataGrid } from '@mui/x-data-grid';
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 import Box from '@mui/material/Box';
+//<<<<<<< HEAD
+//=======
+import Header from '../Header';
+//>>>>>>> d6f2a71a971b2658aa7d5684815f06789be2e96f
 
 const DoctorsTable = (props) => {
   const { isMobile } = props;
@@ -85,12 +89,16 @@ const DoctorsTable = (props) => {
   return (
     // <div className="flex max-w-2xl mx-auto shadow border-b ">
     <div className= {` ${open ? " w-[calc(100%-288px)]" : " w-[calc(100%-40px)]"} " w-full mx-auto shadow border-b"`}>
+           <Box sx={{ textAlign: 'left', m: 1,  fontSize: '35px', color: '#eeeeee', fontWeight: 'bold' }}>DOCTORS</Box>
+           <Header title={"DOCTORS"} subtitle={""}/>
+           
       <Box
       sx={{
-        height: 500,
+        height: 600,
         width: '100%',
+        marginTop: '20px',
         '& .super-app-theme--header': {
-          backgroundColor: 'rgba(255, 7, 0, 0.55)',
+          backgroundColor: '#00695c',
         },
       }}
     >

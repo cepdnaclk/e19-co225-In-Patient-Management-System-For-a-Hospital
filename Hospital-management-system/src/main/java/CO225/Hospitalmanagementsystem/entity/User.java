@@ -29,7 +29,6 @@ public class User {
     private boolean isDischarged;
     private Date admiteDate;
     private String allergics;
-    private int wardno;
 
     @ManyToOne()
     @JoinColumn(

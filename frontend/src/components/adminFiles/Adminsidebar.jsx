@@ -25,19 +25,19 @@ function Adminsidebar(props) {
     e.preventDefault();
     navigate(path);
   }
-
+//bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]  from-gray-700 via-gray-900 to-black
   const open = isMobile;
   return (
 
     <>
       <div
         className={` ${open ? "w-72" : "w-20 "
-          } bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]  from-gray-700 via-gray-900 to-black h-screen p-5  
-          pt-8 duration-300 overflow-y-auto`}
+          }  h-screen p-5  
+          pt-8 duration-300 overflow-y-auto bg-gray ` }
       >
         <div className="flex gap-x-7 items-center">
           <FaHandHoldingMedical size={55} color="#e0e7ff" />
-          <h1 className={`text-white origin-left font-large font-serif italic text-xl duration-200 ${!open && "scale-0"}`}
+          <h1 className={`text-white origin-left font-large font-serif italic text-xl duration-200  ${!open && "scale-0"}`}
           >
             MEDNET
 
