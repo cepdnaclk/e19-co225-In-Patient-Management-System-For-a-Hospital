@@ -65,14 +65,9 @@ function DoctorDashboard(props) {
     <>
       <DoctorSidebar isMobile={isMobile} />
 
-      <div className={` ${open ? 'left-72 w-[calc(100%-288px)]' : 'left-20 w-[calc(100%-80px)]'} absolute p-2`} style={{ backgroundColor: 'red' }}>
+      <div className={` ${open ? 'left-72 w-[calc(100%-288px)]' : 'left-20 w-[calc(100%-80px)]'} absolute p-2`}>
         <div className="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={{ borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
-
-      <div className={` ${open ? "left-72 w-[calc(100%-288px)]" : "left-20 w-[calc(100%-80px)]"} absolute p-2`}>
-        {/* Section 1 - Dashboard Heading */}
-        <div className="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-
-          <h1 className="font-bold pl-2"> Dashboard </h1>
+          <h1 className="font-bold pl-2">Dashboard</h1>
         </div>
 
         <div className="bg-slate-300 p-6">
@@ -144,30 +139,38 @@ function DoctorDashboard(props) {
               <AiOutlineBell className="mr-2" /> View Notifications
             </button>
             <button
-
-              className={`flex items-center px-4 py-2 text-sm font-medium text-white rounded-md focus:outline-none ${
-                isOnDuty ? 'bg-red-500' : 'bg-green-500'
-              }`}
-
-              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none ${isOnDuty ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
-                }`}
+              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none ${isOnDuty ? 'bg-red-300 hover:bg-red-400 text-red-800' : 'bg-green-300 hover:bg-green-400 text-green-800'}`}
               onClick={toggleDutyStatus}
             >
-              <AiOutlineCalendar className="mr-2" /> {isOnDuty ? 'Off Duty' : 'On Duty'}
+              {isOnDuty ? (
+                <>
+                  <AiOutlineCalendar className="mr-2" /> Off Duty
+                </>
+              ) : (
+                <>
+                  <AiOutlineCalendar className="mr-2" /> On Duty
+                </>
+              )}
             </button>
           </div>
         </div>
 
-        <div className="bg-white p-6 mt-6">
-          <div className="flex justify-center">
-            <Calendar
-              onChange={handleDateChange}
-              value={selectedDate}
-              tileContent={getCalendarTileContent}
-              tileClassName={getCalendarTileClassName}
-              onClickDay={handleAddNote}
-            />
+        <div className="bg-white p-6 mt-4">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold text-gray-800">Calendar</h2>
+            <button
+              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
+              onClick={() => handleAddNote(selectedDate)}
+            >
+              Add Note
+            </button>
           </div>
+          <Calendar
+            value={selectedDate}
+            onChange={handleDateChange}
+            tileContent={getCalendarTileContent}
+            tileClassName={getCalendarTileClassName}
+          />
         </div>
       </div>
     </>
