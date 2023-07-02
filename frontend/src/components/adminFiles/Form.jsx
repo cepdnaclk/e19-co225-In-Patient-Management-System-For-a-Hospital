@@ -3,12 +3,21 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
+import EmployeeService from "../../services/EmployeeService";
 
 const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleFormSubmit = (values) => {
     console.log(values);
+     EmployeeService.saveEmployee(values)
+      .then((response) => {
+        console.log(response);
+        values = initialValues;
+      })
+      .catch((error) => {
+        console.log("Error detected:", error);
+      })
   };
   const roleOptions = [
     { label: "Doctor", value: "ROLE_DOCTOR" },
@@ -186,7 +195,7 @@ const checkoutSchema = yup.object().shape({
     userName: yup.string().required("User Name is required"),
     email: yup.string().email("Invalid email").required("Email is required"),
     password: yup.string().required("Password is required"),
-    wardNo: yup.number().required("Ward is required"),
+    wardNo: yup.number().required("Ward is required").max(12, "Ward number must be at most 12"),
     birthDate: yup.string().required("Birth date is required"),
     roles: yup.string().required("Roles is required"),
     nic: yup.string().required("NIC is required"),
