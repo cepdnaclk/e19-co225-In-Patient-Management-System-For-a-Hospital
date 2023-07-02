@@ -1,23 +1,30 @@
-import { Box, Button, TextField, MenuItem } from "@mui/material";
+import { Box, Button, TextField, MenuItem, Typography } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import EmployeeService from "../../services/EmployeeService";
+import { useState } from "react";
 
 const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = (values) => {
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+
+  const handleFormSubmit = (values, {resetForm}) => {
     console.log(values);
      EmployeeService.saveEmployee(values)
       .then((response) => {
         console.log(response);
-        values = initialValues;
+        setSuccessMessage("Saved successfully!")
       })
       .catch((error) => {
         console.log("Error detected:", error);
+        setErrorMessage("user name has already taken");
       })
+      resetForm();
   };
   const roleOptions = [
     { label: "Doctor", value: "ROLE_DOCTOR" },
@@ -30,6 +37,20 @@ const Form = () => {
   return (
     <Box m="20px">
       <Header title="ADD TO STAFF" subtitle="Add new medical offficer" />
+      {successMessage && (
+        <Box mt="20px">
+          <Typography variant="body1" color="success">
+            {successMessage}
+          </Typography>
+        </Box>)}
+        {errorMessage && (
+        <Box mt="20px">
+          <Typography variant="body1" color="error">
+            {errorMessage}
+          </Typography>
+        </Box>
+      )}
+
 
       <Formik
         onSubmit={handleFormSubmit}
@@ -177,6 +198,7 @@ const Form = () => {
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
+            
                 Create New User
               </Button>
             </Box>

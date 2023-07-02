@@ -16,7 +16,7 @@ function Adminsidebar(props) {
     { title: "Doctors", src: <GiStethoscope size={30} />, path: "/admin/doctors" },
     { title: "Nurses", src: <GiNurseFemale size={30} />, path: "/admin/nurses" },
     { title: "Wards", src: <RiHospitalFill size={30} />, path: "/admin/wards" },
-    { title: "Admission clerks", src: <FaReadme size={30} />, path: "" },
+    { title: "Admission clerks", src: <FaReadme size={30} />, path: "/admin/clerks" },
     { title: "Add to staff", src: <AiFillFileAdd size={30} />, path: "/admin/addStaff" },
   ];
 
