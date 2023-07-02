@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { AiFillDashboard } from "react-icons/ai";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import { CgProfile } from "react-icons/Cg";
+import { LuLogOut } from "react-icons/Lu";
+import { FaUserGroup } from "react-icons/fa6";
+import { FaUserPen } from "react-icons/fa6";
 
 
 function DoctorSidebar(props) {
@@ -12,7 +15,10 @@ function DoctorSidebar(props) {
     const Menus = [
         { title: "Dashboard", src: <AiFillDashboard size={30} />, path: "/doctor/dashboard" },
         { title: "Profile", src: <CgProfile size={30} />, path: "/doctor/profile" },
-        { title: "Patients", src: <CgProfile size={30} />, path: "/doctor/patients" },
+        { title: "MyPatients", src: <FaUserGroup size={30} />, path: "/doctor/patients" },
+        { title: "UpdatePatients", src: <FaUserPen size={30} />, path: "/doctor/updatePatients" },
+        { title: "Log out", src: <LuLogOut size={30} />, path: "/patient" },
+
     ];
 
     const navigateDashBoard = (e, path) => {
