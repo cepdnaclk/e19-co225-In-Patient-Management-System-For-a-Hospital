@@ -25,47 +25,111 @@ function AdminDashboard(props) {
   const [count, setCount] = useState({
 
   });
-  const [admitData,setAdmitData] = useState({
-    "id":1,
-    "data": {}
-  });
+  const [admitData,setAdmitData] = useState([
+    {
+        "id": 1,
+        "data": []
+    }
+]);
+const [admit,setAdmit] = useState([
+]);
+const [graphx,setGraphx] = useState([]);
+const [graphy,setGraphy] = useState([]);
+
+const [xdata, setxdata] = useState([]);
+const [ydata, setydata] = useState([]);
+const [x,setX] = useState([
+]);
+const [y,setY] = useState([
+]);
+const [test, setTest] = useState([
+    {
+      id: "hours",
+      data: [
+        { y: "A", x: new Date("2019-05-29 04:00") },
+        { y: "B", x: new Date("2019-05-30 02:00") },
+      ]
+    }
+  ]);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await EmployeeService.getCount();
+         const response = await EmployeeService.getCount();
+        const response_graph = await EmployeeService.getadmitData();
+        setLoading(false);
+        const date = response_graph.data.map(item => (new Date(item.x)).getDate());
+        const count = response_graph.data.map(item => parseInt(item.y));
+        setAdmit(response_graph.data);
         setCount(response.data);
-        console.log(response.data);
+        console.log(admit);
+      const xValues = [];
+      const yValues = [];
+      const nData = [];
+
+      response_graph.data.forEach(item => {
+        const dateParts = item.x.split("T")[0].split("-");
+        
+        const year = parseInt(dateParts[0]);
+        const month = parseInt(dateParts[1]); // Months are zero-based (0-11)
+        const day = parseInt(dateParts[2]);
+        console.log(dateParts);
+        console.log([year, month,day])
+        xValues.push(new Date(year, month, day));
+        nData.push({y:parseInt(item.y), x: new Date(Date.UTC(year, month, day))});
+        yValues.push(parseInt(item.y));
+      });
+        console.log(date);
+        console.log(nData)
+        
+    //     setX(prevX => [...prevX, ...xValues]);
+    //   setY(prevY => [...prevY, ...yValues]);
+    setX(xValues);
+    setY(yValues);
+      console.log(x);
+      console.log(y);
+      setTest([
+        {
+          id: "hours",
+          data: nData
+        }
+      ]);
+        // console.log(response.data);
       } catch (error) {
         console.log(error);
         console.log("fetch err");
       }
-      setLoading(false);
+   
+
+      
       
       
     };
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
+//   useEffect(() => {
+//     const fetchData = async () => {
       
-      try {
-        const response = await EmployeeService.getadmitData();
-        setAdmitData({...admitData, "data":response.data})
-      
-        console.log(admitData);
-      } catch (error) {
-        console.log(error);
-        console.log("fetch err");
-      }
+//       try {
+//         const response = await EmployeeService.getadmitData();
+//         const date = response.data.map(item => new Date(item.x));
+//         const count = response.data.map(item => parseInt(item.y));
+//         setX(date)
+//         setY(count);
+//         console.log(x);
+//         console.log(y);
+//       } catch (error) {
+//         console.log(error);
+//         console.log("fetch err");
+//       }
      
       
       
-    };
-    fetchData();
-  }, []);
+//     };
+//     fetchData();
+//   }, []);
 
   const years = [
     new Date(1990, 0, 1),
@@ -98,6 +162,7 @@ function AdminDashboard(props) {
     new Date(2017, 0, 1),
     new Date(2018, 0, 1),
   ];
+
 
   const data = [
     {
@@ -266,13 +331,13 @@ function AdminDashboard(props) {
           id: 'Years',
           data: years,
           scaleType: 'time',
-          valueFormatter: (date) => date.getFullYear(),
+          valueFormatter: (date) => date.getDate(),
         },
       ]}
       series={[
         {
           id: 'France',
-          label: 'French GDP per capita',
+          label: 'Number of active patients',
           data: FranceGDPperCapita,
           stack: 'total',
           area: false,
@@ -287,7 +352,7 @@ function AdminDashboard(props) {
       margin={{ left: 70 }}
     />
     <Box height={500}>
-      <Linearchart data={data}/>
+      <Linearchart data={test}/>
       </Box>
 
 
