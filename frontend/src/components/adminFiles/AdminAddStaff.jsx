@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from "./Navbar";
-import AddStaffForm from "./AddStaffForm";
+import AddStaffForm from "./Form";
 import AdminSideBar from "./AdminSideBar";
 
 function AdminAddStaff(props) {

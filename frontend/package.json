@@ -22,6 +22,7 @@
     "@nivo/line": "^0.83.0",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
+    "formik": "^2.4.2",
     "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-calendar": "^4.3.0",
@@ -30,7 +31,8 @@
     "react-router-dom": "^6.13.0",
     "styled-components": "^5.3.11",
     "tailwindcss": "^3.3.2",
-    "vite-plugin-react-icons": "^0.2.0"
+    "vite-plugin-react-icons": "^0.2.0",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
