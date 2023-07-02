@@ -16,6 +16,7 @@ import LoginPatient from './components/loginfiles/loginpatient';
 import DoctorDashboard from './components/doctorFiles/doctorDashboard';
 import DoctorProfile from './components/doctorFiles/doctorProfile';
 import PatientHealthDetails from './components/doctorFiles/patients';
+import UpdatePatients from './components/doctorFiles/updatePatients';
 
 import NurseDashboard from './components/NurseFiles/NurseDashboard';
 import NurseProfile from './components/NurseFiles/NurseProfile';
@@ -79,6 +80,7 @@ function App() {
           <Route path="/doctor/dashboard" element={<DoctorDashboard isMobile={isMobile} />} />
           <Route path="/doctor/profile" element={<DoctorProfile isMobile={isMobile} />} />
           <Route path="/doctor/patients" element={<PatientHealthDetails isMobile={isMobile} />} />
+           <Route path="/doctor/updatePatients" element={<UpdatePatients isMobile={isMobile} />} />
 
           <Route path="/nurse" element={<NurseDashboard isMobile={isMobile} />} />
           <Route path="/nurse/dashboard" element={<NurseDashboard isMobile={isMobile} />} />
