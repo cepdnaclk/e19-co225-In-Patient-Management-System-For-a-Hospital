@@ -36,63 +36,63 @@ const darkTheme = createTheme({
 
 
 function App() {
-    const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth > 600);
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth > 600);
+    };
 
-        // Add event listener to window resize
-        window.addEventListener('resize', handleResize);
+    // Add event listener to window resize
+    window.addEventListener('resize', handleResize);
 
-        // Initial check on component mount
-        handleResize();
+    // Initial check on component mount
+    handleResize();
 
-        // Clean up event listener on component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-    return (
-        <ThemeProvider theme={darkTheme}>
-              <CssBaseline />
-        <Routes>
-            
-            <Route path="/" element={<Login />} />
-            <Route path="/" element={<Layout />}>
-            <Route path="login" element={<Login />} />
-            <Route path="admin" element={<AdminDashboard isMobile={isMobile} />} />
-            <Route path="admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
-            <Route path="admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
-            <Route path="admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
-            <Route path="admin/wards" element={<AdminWards isMobile={isMobile} />} />
-            <Route path="admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Routes>
 
-            <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
-            <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />
-            <Route path="/patient/profile" element={<PatientProfile isMobile={isMobile} />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="login" element={<Login />} />
+          <Route path="admin" element={<AdminDashboard isMobile={isMobile} />} />
+          <Route path="admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
+          <Route path="admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
+          <Route path="admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
+          <Route path="admin/wards" element={<AdminWards isMobile={isMobile} />} />
+          <Route path="admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
 
-            <Route path="/doctor" element={<DoctorDashboard isMobile={isMobile} />} />
-            <Route path="/doctor/dashboard" element={<DoctorDashboard isMobile={isMobile} />} />
-            <Route path="/doctor/profile" element={<DoctorProfile isMobile={isMobile} />} />
-            <Route path="/doctor/patients" element={<PatientHealthDetails isMobile={isMobile} />} />
+          <Route path="/patient" element={<PatientDashboard isMobile={isMobile} />} />
+          <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />
+          <Route path="/patient/profile" element={<PatientProfile isMobile={isMobile} />} />
 
-            <Route path="/nurse" element={<NurseDashboard isMobile={isMobile} />} />
-            <Route path="/nurse/dashboard" element={<NurseDashboard isMobile={isMobile} />} />
-            <Route path="/nurse/profile" element={<NurseProfile isMobile={isMobile} />} />
+          <Route path="/doctor" element={<DoctorDashboard isMobile={isMobile} />} />
+          <Route path="/doctor/dashboard" element={<DoctorDashboard isMobile={isMobile} />} />
+          <Route path="/doctor/profile" element={<DoctorProfile isMobile={isMobile} />} />
+          <Route path="/doctor/patients" element={<PatientHealthDetails isMobile={isMobile} />} />
 
-            <Route path="unauthorized" element={<UnAuthorized isMobile={isMobile} />} />
+          <Route path="/nurse" element={<NurseDashboard isMobile={isMobile} />} />
+          <Route path="/nurse/dashboard" element={<NurseDashboard isMobile={isMobile} />} />
+          <Route path="/nurse/profile" element={<NurseProfile isMobile={isMobile} />} />
 
-            <Route element={<RequireAuth allowedRoles="ROLE_DOCTOR" />}>
-          <Route path="test" element={<AdminDashboard />} />
+          <Route path="unauthorized" element={<UnAuthorized isMobile={isMobile} />} />
+
+          <Route element={<RequireAuth allowedRoles="ROLE_DOCTOR" />}>
+            <Route path="test" element={<AdminDashboard />} />
           </Route>
-          </Route>
-        
-        </Routes>
-        </ThemeProvider>
-    );
+        </Route>
+
+      </Routes>
+    </ThemeProvider>
+  );
 }
 
 export default App;
