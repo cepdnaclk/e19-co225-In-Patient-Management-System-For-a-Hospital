@@ -10,6 +10,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdmitDateCount {
-    private Date date;
-    private int count;
+    private Date x;
+    private int y;
 }

@@ -21,7 +21,7 @@ public interface PatientRepository extends JpaRepository<User, Integer> {
 
 
      @Query(
-             value = "SELECT admite_date AS date, COUNT(*) AS count FROM user GROUP BY DATE(admite_date)",
+             value = "SELECT admite_date AS x, COUNT(*) AS y FROM user GROUP BY DATE(admite_date)",
              nativeQuery = true
      )
      List<Map<Date, Integer>> getAdmitDataCount();

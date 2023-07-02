@@ -54,6 +54,14 @@ public class AdminController {
         return adminService.getNurses();
         //  return "check";
     }
+
+    @GetMapping("/clerks")
+    public List<ClerkDetailsModel> getClerks(){
+        return adminService.getClerks();
+        //  return "check";
+    }
+
+
     @GetMapping("/staffCount")
     public CountModel getStaffCount(){
         return adminService.getStaffCount();

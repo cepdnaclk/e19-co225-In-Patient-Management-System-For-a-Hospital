@@ -2,10 +2,7 @@ package CO225.Hospitalmanagementsystem.service;
 
 import CO225.Hospitalmanagementsystem.entity.UserInfo;
 import CO225.Hospitalmanagementsystem.entity.Ward;
-import CO225.Hospitalmanagementsystem.model.AdmitDateCount;
-import CO225.Hospitalmanagementsystem.model.CountModel;
-import CO225.Hospitalmanagementsystem.model.UserInfoModel;
-import CO225.Hospitalmanagementsystem.model.WardModel;
+import CO225.Hospitalmanagementsystem.model.*;
 import CO225.Hospitalmanagementsystem.repository.PatientRepository;
 import CO225.Hospitalmanagementsystem.repository.UserInfoRepository;
 import CO225.Hospitalmanagementsystem.repository.WardRepository;
@@ -138,5 +135,22 @@ public class AdminService {
 //        }
 
         return mapCount;
+    }
+
+    public List<ClerkDetailsModel> getClerks() {
+        List<UserInfo> clerkEntities = repository.findClerks();
+        List<ClerkDetailsModel> clerks = clerkEntities
+                .stream()
+                .map(doc -> new ClerkDetailsModel(
+                        doc.getId(),
+                        doc.getName(),
+                        doc.getUserName(),
+                        doc.getPassword(),
+                        doc.getEmail(),
+                        doc.getRoles(),
+                        doc.getNic(),
+                        doc.getBirthDate()
+                )).collect(Collectors.toList());
+        return clerks;
     }
 }

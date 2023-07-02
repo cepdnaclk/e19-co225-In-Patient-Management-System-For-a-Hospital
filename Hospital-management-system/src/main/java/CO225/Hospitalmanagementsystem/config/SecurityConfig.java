@@ -37,7 +37,7 @@ public class SecurityConfig {
         DefaultSecurityFilterChain build = http.csrf().disable().authorizeHttpRequests()
                 .requestMatchers("/", "/admin/welcome", "/admin/staff", "admin/ward", "admin/authenticate",
                         "admin/doctors"      ,"/addPatients","/records", "/login", "admin/staffCount",
-                        "clerk/add", "admin/admitData").permitAll()
+                        "clerk/add", "admin/admitData", "admin/**").permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/doctor").authenticated()//hasRole("DOCTOR")
 //                for jwt token

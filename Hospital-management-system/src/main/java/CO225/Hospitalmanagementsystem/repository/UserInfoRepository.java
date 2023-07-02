@@ -64,4 +64,9 @@ public interface UserInfoRepository extends JpaRepository <UserInfo, Long> {
             nativeQuery = true
     )
     int getClerkCount();
+    @Query(
+            value = "select * from user_info where roles = 'ROLE_CLERKE'",
+            nativeQuery = true
+    )
+    List<UserInfo> findClerks();
 }
