@@ -12,8 +12,5 @@ public class PatientController {
 
     @Autowired
     PatientService patientService;
-    @PostMapping("/addPatients")
-    public String add(@RequestBody User user){
-        return patientService.addPatient(user);
-    }
+
 }

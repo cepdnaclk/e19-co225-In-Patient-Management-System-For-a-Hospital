@@ -49,18 +49,18 @@ public interface UserInfoRepository extends JpaRepository <UserInfo, Long> {
     Long getIdByUserName(String username);
 
     @Query(
-            value = "select COUNT(user_name) from user_info where roles = ROLE_DOCTOR",
+            value = "select COUNT(user_name) from user_info where roles = 'ROLE_DOCTOR'",
             nativeQuery = true
     )
     int getDoctorCount();
 
     @Query(
-            value = "select COUNT(user_name) from user_info where roles = ROLE_NURSE",
+            value = "select COUNT(user_name) from user_info where roles = 'ROLE_NURSE'",
             nativeQuery = true
     )
     int getNurseCount();
     @Query(
-            value = "select COUNT(user_name) from user_info where roles = ROLE_CLERKE",
+            value = "select COUNT(user_name) from user_info where roles = 'ROLE_CLERKE'",
             nativeQuery = true
     )
     int getClerkCount();
