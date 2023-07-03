@@ -1,4 +1,5 @@
-# MEDNET
+# <img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/d752c594-f20a-4a1a-9734-7748f4f3001b" width="25" height="25" /> MEDNET 
+
 
 ![4950249_19836](https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/0d01cfb3-91ba-48c2-a7f0-02c667e56e33)
  
@@ -14,6 +15,14 @@ In most hospitals, old file systems are used to keep the track of patient's info
 ---
 
 ## Key Features
+1. Efficient Patient Management
+2. No papers at all
+3. Doctors, consultants and nurses are connected to one platform
+4. Only one time registration for patients
+5. Past medical history of a patient can be viewed efficiently
+6. Enhanced resource management
+7. Remote patient monitoring
+8. Data driven decision making
 
 ---
 
