@@ -57,7 +57,7 @@ Full stack software project to implement a hospital management system. Users in 
 * E/19/095 - Lakshitha Edirisinghe <a href="e19095@eng.pdn.ac.lk">email</a>
 * E/19/096 - Chamanga Ekanayake <a href="e19096@eng.pdn.ac.lk">email</a>
 * E/19/236 - Lahiru Menikdiwela <a href="e19236@eng.pdn.ac.lk">email</a>
-* E/19/240 - B.M.S. Mendis <a href="e19240@eng.pdn.ac.lk">email</a>
+* E/19/240 - Shenal Mendis <a href="e19240@eng.pdn.ac.lk">email</a>
 
 ### Group 03:
 * E/19/253 - Isira Narasinghe<a href="e19253@eng.pdn.ac.lk">email</a>
