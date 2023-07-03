@@ -1,7 +1,9 @@
 # <img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/d752c594-f20a-4a1a-9734-7748f4f3001b" width="25" height="25" /> MEDNET 
 
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/b54f58ae-9f19-4d16-9181-797d13343fb4"
+/>
 
-![4950249_19836](https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/0d01cfb3-91ba-48c2-a7f0-02c667e56e33)
+
  
 ## Introducing MEDNET: Revolutionizing the Patient Management System
 
@@ -31,6 +33,16 @@ In most hospitals, old file systems are used to keep the track of patient's info
 <img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/c33824cf-f8bc-4ed5-8e7a-a895df587c5b" />
 
 ---
+## Overviw of the Software product
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/3cae6c87-0cf2-41df-b7f3-8f0f29b68bb5" />
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/0f62b7b2-85e2-4ab5-ba8f-4b3967f17a8c" />
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/8886dfb6-b613-461f-b6cd-d625d76e3553" />
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/871f185a-ce69-4bfc-8eab-d8f723ea8e89" />
+
+
+
+
+
 ## Our Team
 
 ### Group 14:
