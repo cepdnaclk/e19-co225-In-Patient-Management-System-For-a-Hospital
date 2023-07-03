@@ -22,7 +22,7 @@ const login = (user) => {
 )
     .then((response) => {
       if (response.data.accessToken) {
-        localStorage.setItem(response.data.id, JSON.stringify(response.data));
+        localStorage.setItem("token", JSON.stringify(response.data));
       }
 
       return response.data;

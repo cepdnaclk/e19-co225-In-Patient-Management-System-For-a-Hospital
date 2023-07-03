@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import loginImage from './loginimage.png';
 import LoginService from "../../services/LoginService";
+import LoginForm from "./LoginForm";
 import UseAuth from '../hooks/UseAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
@@ -62,14 +63,15 @@ function Login() {
                     <FaHandHoldingMedical size={80} color="#ff3456" />
                     <p className="mx-4 mb-0 text-center font-semibold text-slate-500 text-6xl">MEDNET</p>
                 </div>
-                <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
+                {/* <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
                     name='username' onChange={(e) => handleChange(e)} type="text" placeholder="Username" />
                 <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
                     name='password' onChange={(e) => handleChange(e)} type="password" placeholder="Password" />
                 <div className="text-center md:text-left">
                     <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2
-                     text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={(e) => login(e)}>Login</button>
-                </div>
+                     text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={(e) => login(e)}>Login</button> */}
+                     <LoginForm/>
+                
             </div>
         </section>
     );
