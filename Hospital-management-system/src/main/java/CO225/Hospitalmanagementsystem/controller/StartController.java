@@ -36,7 +36,6 @@ public class StartController {
 
     @PostMapping("/login")
     public TokenModel authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
-        try {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         TokenModel tokenModel = new TokenModel();
             if (authentication.isAuthenticated()) {
@@ -52,14 +51,10 @@ public class StartController {
                 tokenModel.setRoles("");
                 return tokenModel;
             }
-        }catch (Exception e) {
-            TokenModel tokenModel = new TokenModel();
-            tokenModel.setAccessToken("");
-            tokenModel.setRoles("");
-            return tokenModel;
+
 
         }
 //
 //
     }
-}
+

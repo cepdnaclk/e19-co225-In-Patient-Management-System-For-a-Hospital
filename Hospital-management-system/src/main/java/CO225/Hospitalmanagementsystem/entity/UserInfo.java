@@ -2,6 +2,7 @@ package CO225.Hospitalmanagementsystem.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(uniqueConstraints = {@UniqueConstraint(name = "UniqueUserName", columnNames = {"userName"})})
+@Builder
 public class UserInfo {
 
     @Id

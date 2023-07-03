@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WardInfoModel {
-    private long wardNo;
+    private long id;
     private String type;
     private int doctorCount;
     private int nurseCount;
