@@ -1,240 +1,116 @@
-import { Box, Button, TextField, MenuItem, Typography } from "@mui/material";
-import { Formik } from "formik";
-import * as yup from "yup";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Header from "../../components/Header";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import EmployeeService from "../../services/EmployeeService";
-import { useState } from "react";
+import { DataGrid } from '@mui/x-data-grid';
+import { styled } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
+import Box from '@mui/material/Box';
+import Header from '../Header';
 
-const Form = () => {
-  const isNonMobile = useMediaQuery("(min-width:600px)");
+const DoctorsTable = (props) => {
+  const { isMobile } = props;
+  const open = isMobile;
 
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(true);
+  const [employees, setEmployees] = useState([]);
 
-  const handleFormSubmit = (values, {resetForm}) => {
-    console.log(values);
-     EmployeeService.saveEmployee(values)
-      .then((response) => {
-        console.log(response);
-        setSuccessMessage("Saved successfully!")
-      })
-      .catch((error) => {
-        console.log("Error detected:", error);
-        setErrorMessage("user name has already taken");
-      })
-      resetForm();
-  };
-  const roleOptions = [
-    { label: "Doctor", value: "ROLE_DOCTOR" },
-    { label: "Nurse", value: "ROLE_NURSE" },
-    { label: "Clerk", value: "ROLE_CLERKE" },
- 
-   
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await EmployeeService.getaWardData();
+        setEmployees(response.data);
+      } catch (error) {
+        console.log(error);
+        console.log("fetch err");
+      }
+      setLoading(false);
+      
+      
+    };
+    fetchData();
+  }, []);
+
+  
+  
+  const columns = [
+    { field: 'id',
+     headerName: 'Ward number',
+      width: 120,
+      headerClassName: 'super-app-theme--header',
+      headerAlign: 'center',},
+
+    { 
+      field: 'type',
+       headerName: 'Description', 
+       width: 200,
+       headerClassName: 'super-app-theme--header',
+       headerAlign: 'center',
+    },
+    { field: 'doctorCount',
+     headerName: 'No. of doctors', 
+     width: 200,
+     headerClassName: 'super-app-theme--header',
+     
+     },
+    { field: 'nurseCount',
+     headerName: 'No.of Nurses',
+      width: 200,
+      headerClassName: 'super-app-theme--header',
+      },
+    {field: 'patientCount',
+     headerName: 'No.of patients', 
+     flex: 1,
+     headerClassName: 'super-app-theme--header',
+     },
     
   ];
+  
 
   return (
-    <Box m="20px">
-      <Header title="ADD TO STAFF" subtitle="Add new medical offficer" />
-      {successMessage && (
-        <Box mt="20px">
-          <Typography variant="body1" color="success">
-            {successMessage}
-          </Typography>
-        </Box>)}
-        {errorMessage && (
-        <Box mt="20px">
-          <Typography variant="body1" color="error">
-            {errorMessage}
-          </Typography>
-        </Box>
-      )}
-
-
-      <Formik
-        onSubmit={handleFormSubmit}
-        initialValues={initialValues}
-        validationSchema={checkoutSchema}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleBlur,
-          handleChange,
-          handleSubmit,
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <Box
-              display="grid"
-              gap="30px"
-              gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-              sx={{
-                "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-              }}
-            >
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Name"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.name}
-                name="name"
-                error={touched.name && errors.name}
-                helperText={touched.name && errors.name}
-                sx={{ gridColumn: "span 2" }}
-              />
-              
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="User Name"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.userName}
-                name="userName"
-                error={touched.userName && errors.userName}
-                helperText={touched.userName && errors.userName}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="password"
-                label="Password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.password}
-                name="password"
-                error={touched.password && errors.password}
-                helperText={touched.password && errors.password}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Email"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.email}
-                name="email"
-                error={touched.email && errors.email}
-                helperText={touched.email && errors.email}
-                sx={{ gridColumn: "span 4" }}
-              />
-              
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="National Identify Card number"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.nic}
-                name="nic"
-                error={touched.nic && errors.nic}
-                helperText={touched.nic && errors.nic}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-              fullWidth
-              variant="filled"
-            //   type="text"
-            select
-              label="Roles"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.roles}
-              name="roles"
-              error={touched.roles && !!errors.roles}
-              helperText={touched.roles && errors.roles}
-              sx={{ gridColumn: "span 2" }}
-              >
-                {/* {roleOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-             */}
-             <MenuItem value="">Select Role</MenuItem>
-  {roleOptions.map((option) => (
-    <MenuItem key={option.value} value={option.value}>
-      {option.label}
-    </MenuItem>
-  ))}
-        
-              </TextField>
-              <TextField
-                fullWidth
-                variant="filled"
-                type="number"
-                label="Ward number(2-12)"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.wardNo}
-                name="wardNo"
-                error={touched.wardNo && errors.wardNo}
-                helperText={touched.wardNo && errors.wardNo}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Birth Date"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.birthDate}
-                name="birthDate"
-                error={touched.birthDate && errors.birthDate}
-                helperText={touched.birthDate && errors.birthDate}
-                sx={{ gridColumn: "span 4" }}
-              />
-            </Box>
-            <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
-            
-                Create New User
-              </Button>
-            </Box>
-          </form>
-        )}
-      </Formik>
-    </Box>
-  );
-};
-
-const phoneRegExp =
-  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
-const checkoutSchema = yup.object().shape({
-    name: yup.string().required("Name is required"),
-    userName: yup.string().required("User Name is required"),
-    email: yup.string().email("Invalid email").required("Email is required"),
-    password: yup.string().required("Password is required"),
-    wardNo: yup.number().required("Ward is required").max(12, "Ward number must be at most 12"),
-    birthDate: yup.string().required("Birth date is required"),
-    roles: yup.string().required("Roles is required"),
-    nic: yup.string().required("NIC is required"),
+    // <div className="flex max-w-2xl mx-auto shadow border-b ">
+    <div className= {` ${open ? " w-[calc(100%-288px)]" : " w-[calc(100%-40px)]"} " w-full mx-auto shadow border-b"`}>
+           {/* <Box sx={{ textAlign: 'left', m: 1,  fontSize: '35px', color: '#eeeeee', fontWeight: 'bold' }}>DOCTORS</Box> */}
+           <Header title={"WARDS"} subtitle={""}/>
+           
+      <Box
+      sx={{
+        height: 600,
+        width: '100%',
+        marginTop: '20px',
+        '& .super-app-theme--header': {
+          backgroundColor: '#00695c',
+        },
+      }}
+    >
+      <DataGrid rows={employees} columns={columns} getRowId={(row)=>row.id} loading= {loading}
+      // sx={{
+      //   boxShadow: 2,
+      //   border: 2,
+      //   borderColor: 'primary.light',
+      //   '& .MuiDataGrid-cell:hover': {
+      //     color: 'primary.main',
+      //     '& .super-app-theme--header': {
+      //       backgroundColor: 'rgba(255, 7, 0, 0.55)',
+      //     }
+      //   },
+      // }}
+      sx={{
+        '& .MuiDataGrid-row': {
+          bgcolor: grey[900],
+          color: 'white',
+          '&:hover': {
+            bgcolor: grey[500], // Set hover background color to grey
+          },
+        },
+      }}
+      />
+      </Box>
     
- 
-  
-});
-const initialValues = {
-    name: "",
-    userName: "",
-    password: "",
-    email: "",
-    roles: "",
-    nic: "",
-    wardNo: "",
-    birthDate: ""
-};
+    </div>
+  )
+}
 
-export default Form;
+export default DoctorsTable
