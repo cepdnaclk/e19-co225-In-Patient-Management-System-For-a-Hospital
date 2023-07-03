@@ -23,6 +23,9 @@ class EmployeeService {
   getadmitData(){
     return axios.get(ADMIN_API_BASE_URL+"/admitData")
   }
+  getaWardData(){
+    return axios.get(ADMIN_API_BASE_URL+"/ward")
+  }
 
 }
 

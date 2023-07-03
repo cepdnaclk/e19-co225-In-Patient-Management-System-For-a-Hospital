@@ -7,7 +7,7 @@ import AdminDashboard from './components/adminFiles/AdminDashboard';
 import AdminDoctors from './components/adminFiles/AdminDoctors';
 import AdminClerks from './components/adminFiles/AdminClerks';
 import AdminNurses from './components/adminFiles/AdminNurses';
-import AdminWards from './components/adminFiles/displayWards';
+import AdminWards from './components/adminFiles/AdminWards';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 
 import PatientDashboard from './components/patientFiles/patientDashboard';
