@@ -11,7 +11,6 @@ import AdminWards from './components/adminFiles/AdminWards';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 
 import PatientDashboard from './components/patientFiles/patientDashboard';
-import PatientProfile from './components/patientFiles/patientProfile';
 import LoginPatient from './components/loginfiles/loginpatient';
 
 import DoctorDashboard from './components/doctorFiles/doctorDashboard';
@@ -76,13 +75,12 @@ function App() {
 
           <Route path='/patient' element={<LoginPatient />} />
           <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />
-          <Route path="/patient/profile" element={<PatientProfile isMobile={isMobile} />} />
 
           <Route path="/doctor" element={<DoctorDashboard isMobile={isMobile} />} />
           <Route path="/doctor/dashboard" element={<DoctorDashboard isMobile={isMobile} />} />
           <Route path="/doctor/profile" element={<DoctorProfile isMobile={isMobile} />} />
           <Route path="/doctor/patients" element={<PatientHealthDetails isMobile={isMobile} />} />
-           <Route path="/doctor/updatePatients" element={<UpdatePatients isMobile={isMobile} />} />
+          <Route path="/doctor/updatePatients" element={<UpdatePatients isMobile={isMobile} />} />
 
           <Route path="/nurse" element={<NurseDashboard isMobile={isMobile} />} />
           <Route path="/nurse/dashboard" element={<NurseDashboard isMobile={isMobile} />} />
@@ -93,12 +91,12 @@ function App() {
           <Route element={<RequireAuth allowedRoles="ROLE_ADMIN" />}>
             <Route path="test" element={<AdminDashboard />} />
             <Route path="admin" element={<AdminDashboard isMobile={isMobile} />} />
-          <Route path="admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
-          <Route path="admin/clerks" element={<AdminClerks isMobile={isMobile} />} />
-          <Route path="admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
-          <Route path="admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
-          <Route path="admin/wards" element={<AdminWards isMobile={isMobile} />} />
-          <Route path="admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
+            <Route path="admin/dashboard" element={<AdminDashboard isMobile={isMobile} />} />
+            <Route path="admin/clerks" element={<AdminClerks isMobile={isMobile} />} />
+            <Route path="admin/doctors" element={<AdminDoctors isMobile={isMobile} />} />
+            <Route path="admin/nurses" element={<AdminNurses isMobile={isMobile} />} />
+            <Route path="admin/wards" element={<AdminWards isMobile={isMobile} />} />
+            <Route path="admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} />
           </Route>
         </Route>
 
