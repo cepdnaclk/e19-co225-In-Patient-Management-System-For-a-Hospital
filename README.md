@@ -33,7 +33,7 @@ In most hospitals, old file systems are used to keep the track of patient's info
 <img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/c33824cf-f8bc-4ed5-8e7a-a895df587c5b" />
 
 
-=======
+---
 ## Overview
 Full stack software project to implement a hospital management system. Users in this applications are Administration, Doctors, Nurses, Adnission clerks and Care givers. Seperate API have deveoloped for all functions. Including Spring security , encryption and Json Web token to protect sensitive data using Authorization and Authentication
 
@@ -43,9 +43,7 @@ Full stack software project to implement a hospital management system. Users in 
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/871f185a-ce69-4bfc-8eab-d8f723ea8e89" />
 
 
-
-
-=======
+----
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/debbd03b-32e5-497c-96f1-d6e7987132f3" />
 
 
