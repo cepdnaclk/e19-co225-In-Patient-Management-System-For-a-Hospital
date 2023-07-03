@@ -153,4 +153,20 @@ public class AdminService {
                 )).collect(Collectors.toList());
         return clerks;
     }
+
+    public List<WardInfoModel> getWardInfo() {
+        List<Ward> wardEntities = wardRepository.findAll();
+        List<WardInfoModel> wards = wardEntities
+                .stream()
+                .map(ward -> new WardInfoModel(
+                        ward.getWardId(),
+                        ward.getType(),
+                        repository.getDocCountByWardId(ward.getWardId()),
+                        repository.getNurseCountByWardId(ward.getWardId()),
+                        patientRepository.getPatientCountByWardId(ward.getWardId())
+                )).collect(Collectors.toList());
+        return wards;
+
+
+    }
 }

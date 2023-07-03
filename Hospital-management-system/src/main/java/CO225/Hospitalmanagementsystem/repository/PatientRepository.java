@@ -25,4 +25,10 @@ public interface PatientRepository extends JpaRepository<User, Integer> {
              nativeQuery = true
      )
      List<Map<Date, Integer>> getAdmitDataCount();
+
+     @Query(
+             value = "select COUNT(user_id) from user where ward_id =?1",
+             nativeQuery = true
+     )
+     int getPatientCountByWardId(long wardId);
 }

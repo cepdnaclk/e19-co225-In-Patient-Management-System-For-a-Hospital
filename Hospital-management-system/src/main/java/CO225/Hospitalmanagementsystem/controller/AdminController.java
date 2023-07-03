@@ -4,6 +4,7 @@ package CO225.Hospitalmanagementsystem.controller;
 import CO225.Hospitalmanagementsystem.model.*;
 import CO225.Hospitalmanagementsystem.service.AdminService;
 import CO225.Hospitalmanagementsystem.service.JwtService;
+import CO225.Hospitalmanagementsystem.service.WardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -71,6 +72,11 @@ public class AdminController {
     @PostMapping("/ward")
     public WardModel addNewWard(@RequestBody WardModel wardModel){
         return adminService.addWard(wardModel);
+        //  return "check";
+    }
+    @GetMapping("/ward")
+    public List<WardInfoModel> getWardInfo(){
+        return adminService.getWardInfo();
         //  return "check";
     }
 
