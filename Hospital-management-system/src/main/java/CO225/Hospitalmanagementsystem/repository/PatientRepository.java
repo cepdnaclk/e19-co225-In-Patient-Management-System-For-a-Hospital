@@ -2,6 +2,7 @@ package CO225.Hospitalmanagementsystem.repository;
 
 import CO225.Hospitalmanagementsystem.entity.User;
 import CO225.Hospitalmanagementsystem.model.AdmitDateCount;
+import CO225.Hospitalmanagementsystem.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -31,4 +32,10 @@ public interface PatientRepository extends JpaRepository<User, Integer> {
              nativeQuery = true
      )
      int getPatientCountByWardId(long wardId);
+
+     @Query(
+             value = "select * from user where nic =?1",
+             nativeQuery = true
+     )
+     UserModel finByNic(String nic);
 }

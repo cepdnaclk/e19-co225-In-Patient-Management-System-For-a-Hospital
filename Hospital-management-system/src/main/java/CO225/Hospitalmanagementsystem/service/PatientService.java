@@ -45,4 +45,7 @@ public class PatientService {
     }
 
 
+    public UserModel getPatientByNIC(String nic) {
+        return patientRepository.finByNic(nic);
+    }
 }
