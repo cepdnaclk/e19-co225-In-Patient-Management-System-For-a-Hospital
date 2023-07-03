@@ -12,72 +12,78 @@ import PatientService from "../../services/PatientService";
 function PatientDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
-    
-
-     const [users, setUsers] = useState();
-
-    // useEffect(() => {
-    //     const currentUrl = window.location.href
-    //     const segments = path.split("/");
-    //     const nic = segments[segments.length - 1];
-
-
-    //     loadUsers();
-    // }, []);
-  
-        
-          useEffect(() => {
-    const fetchData = async () => {
-        const currentUrl = window.location.href
-         const segments = currentUrl.split("/");
-         const nic = segments[segments.length - 1];
-         console.log(nic);
-        
-      try {
-        
-        const data = await PatientService.getData(nic);
-        console.log(data.data)
-        
-        // console.log(response.data);
-      } catch (error) {
-        console.log(error);
-        console.log("fetch err");
-      }
-   
-
-      
-      
-      
-    };
-    fetchData();
-}, []);
-
-    // const loadUsers = async () => {
-    //     const result = await axios.get("http://localhost:9081/patient/nic");
-
-    //     console.log(result.data)
-    // }
 
     //Header Values
-    const userName = "John Doe"
-    const userID = 3
+    const [userName, setUserName] = useState([]);
+    const [userID, setuserID] = useState([]);
 
-    const dob = "23/12/1999"
-    const age = 24
+    const [dob, setDOB] = useState([]);
+    const [age, setAge] = useState([]);
 
-    const dateOfAdmit = "2023/07/01"
-    const isDischarged = "No"
+    const [dateOfAdmit, setdateOfAdmit] = useState([]);
+    const [isDischarged, setisDischarged] = useState([]);
 
-    const Allergies = "Asthma"
-    const ward = 7
+    const [Allergies, setAllergies] = useState([]);
+    const [ward, setWard] = useState([]);
 
     //Health Status
     const bodyTemperature = 36
     const sugarLevel = 130
     const bloodPressure = 79
 
-    const SugarLevelCondition = "Severe"
-    const bloodPressureCondition = "Normal"
+    useEffect(() => {
+        const fetchData = async () => {
+            const currentUrl = window.location.href
+            const segments = currentUrl.split("/");
+            const nic = segments[segments.length - 1];
+            // console.log(nic);
+            try {
+                const data = await PatientService.getData(nic);
+                console.log(data.data)
+
+                //Set Name and User ID
+                setUserName(data.data.name)
+                setuserID(data.data.userId)
+
+                //Set BirthDate
+                const dateStr = data.data.birthDate
+                setDOB(dateStr)
+
+                //Set the date of Admit
+                var date = new Date(data.data.admiteDate);
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                var formattedDate = year + '-' + month.toString().padStart(2, '0') + '-' + day.toString().padStart(2, '0');
+                setdateOfAdmit(formattedDate)
+
+                //Calculate the age and set the age
+                var currentYear = new Date().getFullYear();  //Take current Year
+                var parts = dateStr.split("/");
+                var birthYear = parseInt(parts[2], 10);  //Extract the birth Year
+                var ageCalc = currentYear - birthYear
+                setAge(ageCalc)
+
+                //Set the allergies and wards
+                setAllergies(data.data.allergics)
+
+                //Set the discharge status
+                if (data.data.discharged) {
+                    setisDischarged("Yes")
+                }
+                else {
+                    setisDischarged("No")
+                }
+
+            } catch (error) {
+                console.log(error);
+                console.log("fetch err");
+            }
+        };
+        fetchData();
+    }, []);
+
+
 
     const getTempColour = () => {
         if (36 <= bodyTemperature && bodyTemperature <= 38) {
@@ -129,7 +135,6 @@ function PatientDashboard(props) {
                 <div className="rounded-tl-3xl bg-gradient-to-r from-blue-500 to-blue-900 text-white p-4 shadow text-2xl" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
                     <h1 className="font-bold pl-2 ">Dashboard</h1>
                 </div>
-
 
                 {/* Section 2 - User Detail Section */}
                 <div className="bg-slate-300 p-6">
