@@ -25,6 +25,8 @@ function PatientDashboard(props) {
 
     const [Allergies, setAllergies] = useState([]);
     const [ward, setWard] = useState([]);
+    const [temp, settemp] = useState(35);
+    const [sugar, setsugar] = useState(56)
 
     //Health Status
     const bodyTemperature = 36
@@ -36,6 +38,15 @@ function PatientDashboard(props) {
             const currentUrl = window.location.href
             const segments = currentUrl.split("/");
             const nic = segments[segments.length - 1];
+            const number = parseInt(nic);
+
+// Extract the last two digits
+        const lastTwoDigits = number % 100;
+
+// Extract the first two digits
+    const firstTwoDigits = Math.floor(number / 100) % 100;
+    settemp(lastTwoDigits);
+    setsugar(firstTwoDigits);
             // console.log(nic);
             try {
                 const data = await PatientService.getData(nic);
@@ -213,7 +224,7 @@ function PatientDashboard(props) {
                                 {/* Content Here */}
                                 <div className="pl-5 flex flex-col  flex-grow">
                                     <div className='justify-between pb-5'>
-                                        <CircularProgressBar color={getTempColour()} value={bodyTemperature} />
+                                        <CircularProgressBar color={getTempColour()} value={temp} />
                                     </div>
                                     <span style={{ fontSize: 20 }}>Condition: {getTempStatus()}</span>
                                     <span style={{ fontSize: 20 }}>Accepted Level: 36.1°C to 37.2°C</span>
@@ -230,7 +241,7 @@ function PatientDashboard(props) {
                                 <div className="pl-5 flex flex-col  flex-grow">
 
                                     <div className='justify-between pb-5'>
-                                        <CircularProgressBar color={getSugarColour()} value={sugarLevel} />
+                                        <CircularProgressBar color={getSugarColour()} value={sugar} />
                                     </div>
                                     <span style={{ fontSize: 20 }}>Condition: {getSugarStatus()}</span>
                                     <span style={{ fontSize: 20 }}>Accepted Level: 70mg/dL to 100mg/dL</span>
