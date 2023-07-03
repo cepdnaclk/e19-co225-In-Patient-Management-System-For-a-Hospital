@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface PatientRepository extends JpaRepository<User, Integer> {
 
@@ -34,8 +35,14 @@ public interface PatientRepository extends JpaRepository<User, Integer> {
      int getPatientCountByWardId(long wardId);
 
      @Query(
-             value = "select * from user where nic =?1",
+             value = "select * from user where user_id =?1",
              nativeQuery = true
      )
-     UserModel finByNic(String nic);
+     Optional<User>  findUserByNic(String name);
+
+//     @Query(
+//             value = "select * from user where nic =?1",
+//             nativeQuery = true
+//     )
+//     UserModel finByNic(Integer nic);
 }

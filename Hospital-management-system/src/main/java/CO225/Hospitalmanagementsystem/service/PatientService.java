@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -45,7 +47,7 @@ public class PatientService {
     }
 
 
-    public UserModel getPatientByNIC(String nic) {
-        return patientRepository.finByNic(nic);
+    public Optional<User> getPatientByNIC(String nic) {
+        return patientRepository.findUserByNic(nic);
     }
 }
