@@ -18,7 +18,7 @@ public class MailService {
                 .toLowerCase().replace("_", " ");
         String result = formattedRole.substring(0, 1).toUpperCase() + formattedRole.substring(1);
 
-        message.setFrom("unicusuop@gmail.com");
+        message.setFrom("");
         message.setTo(userInfoModel.getEmail());
         String text = "Welcome to MEDnet you have been added to MEDnet medical staff as a "+result
                 +"\n"+"Your user Name:"+userInfoModel.getUserName()
