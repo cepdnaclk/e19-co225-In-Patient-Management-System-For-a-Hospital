@@ -11,7 +11,6 @@ function PatientSidebar(props) {
     const navigate = useNavigate();
     const Menus = [
         { title: "Dashboard", src: <AiFillDashboard size={30} />, path: "/patient/dashboard" },
-        { title: "Profile", src: <CgProfile size={30} />, path: "/patient/profile" },
         { title: "Log out", src: <LuLogOut size={30} />, path: "/patient" },
     ];
 

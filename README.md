@@ -28,11 +28,7 @@ In most hospitals, old file systems are used to keep the track of patient's info
 
 ## Technology Stack
 
-#### Front-End Development
-<img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/16f31e6b-3733-40a6-9c8c-f8df8d32c183" />
-
-#### Back-End Development
-<img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/12b24702-21bb-486b-bb9b-a0514aa850bf" />
+<img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/c33824cf-f8bc-4ed5-8e7a-a895df587c5b" />
 
 ---
 ## Our Team
