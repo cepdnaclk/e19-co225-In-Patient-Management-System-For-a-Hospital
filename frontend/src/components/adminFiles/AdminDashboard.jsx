@@ -76,8 +76,10 @@ const [test, setTest] = useState([
         const day = parseInt(dateParts[2]);
         console.log(dateParts);
         console.log([year, month,day])
-        xValues.push(new Date(year, month, day));
-        nData.push({y:parseInt(item.y), x: (new Date(Date.UTC(year, month, day))).getDate()});
+        xValues.push(new Date(year, month, day).getDate());
+        nData.push({y:parseInt(item.y),
+           x: new Date(item.x)})
+           //(new Date((year, month, day)))});
         yValues.push(parseInt(item.y));
       });
         console.log(date);

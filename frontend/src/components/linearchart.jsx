@@ -55,7 +55,7 @@ const linearchart = ({ data , isCustomLineColors = false, isDashboard = true/* s
         }}
         colors={{ scheme: 'set1' }} // added
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-        xScale={{ type: "point" }}
+        xScale={{ type: "time" }}
         yScale={{
           type: "linear",
           min: "auto",
