@@ -32,8 +32,11 @@ In most hospitals, old file systems are used to keep the track of patient's info
 
 <img src="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/c33824cf-f8bc-4ed5-8e7a-a895df587c5b" />
 
----
-## Overviw of the Software product
+
+=======
+## Overview
+Full stack software project to implement a hospital management system. Users in this applications are Administration, Doctors, Nurses, Adnission clerks and Care givers. Seperate API have deveoloped for all functions. Including Spring security , encryption and Json Web token to protect sensitive data using Authorization and Authentication
+
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/3cae6c87-0cf2-41df-b7f3-8f0f29b68bb5" />
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/0f62b7b2-85e2-4ab5-ba8f-4b3967f17a8c" />
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/8886dfb6-b613-461f-b6cd-d625d76e3553" />
@@ -42,17 +45,22 @@ In most hospitals, old file systems are used to keep the track of patient's info
 
 
 
+=======
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/debbd03b-32e5-497c-96f1-d6e7987132f3" />
+
+
+
 
 ## Our Team
 
 ### Group 14:
-* E/19/095 - E.M.L.K. Edirisinghe
-* E/19/096 - E.M.C.Y.B. Ekanayake 
-* E/19/236 - W.L. Manikdiwela 
-* E/19/240 - B.M.S. Mendis 
+* E/19/095 - Lakshitha Edirisinghe <a href="e19095@eng.pdn.ac.lk">email</a>
+* E/19/096 - Chamanga Ekanayake <a href="e19096@eng.pdn.ac.lk">email</a>
+* E/19/236 - Lahiru Menikdiwela <a href="e19236@eng.pdn.ac.lk">email</a>
+* E/19/240 - B.M.S. Mendis <a href="e19240@eng.pdn.ac.lk">email</a>
 
 ### Group 03:
-* E/19/253 - N.K.B.I.U. Narasinghe
-* E/19/306 - M.M.P.N. Rajakaruna
-* E/19/405 - T.M.R.S. Thennakoon
-* E/19/495 - A.G.D.C. Thilakarathne 
+* E/19/253 - Isira Narasinghe<a href="e19253@eng.pdn.ac.lk">email</a>
+* E/19/306 - Pumudu Rajakaruna<a href="e19306@eng.pdn.ac.lk">email</a>
+* E/19/405 - Rajitha Thennakoon<a href="e19405@eng.pdn.ac.lk">email</a>
+* E/19/495 - Chamuditha Thilakarathne <a href="e19495@eng.pdn.ac.lk">email</a>
