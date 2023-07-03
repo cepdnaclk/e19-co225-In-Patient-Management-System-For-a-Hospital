@@ -108,7 +108,7 @@ const LoginForm = () => {
               <TextField
                 fullWidth
                 variant="filled"
-                type="text"
+                type="password"
                 label="Password"
                 onBlur={handleBlur}
                 onChange={handleChange}
