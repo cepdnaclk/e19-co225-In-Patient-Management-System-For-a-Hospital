@@ -1,5 +1,6 @@
 package CO225.Hospitalmanagementsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,14 +35,15 @@ public class User {
     @JoinColumn(
             name = "ward_id",
             referencedColumnName = "wardId"
-    )private Ward ward;
+    )@JsonIgnore
+    private Ward ward;
 
-    @OneToMany(mappedBy = "patient")
-    private List<Medicine> medicines = new ArrayList<Medicine>();
-
-    @OneToMany(mappedBy = "patient")
-    private List<Advice> advices = new ArrayList<Advice>();
-
-    @OneToMany(mappedBy = "patient")
-    private List<Records> records = new ArrayList<Records>();
+//    @OneToMany(mappedBy = "patient")
+//    private List<Medicine> medicines = new ArrayList<Medicine>();
+//
+//    @OneToMany(mappedBy = "patient")
+//    private List<Advice> advices = new ArrayList<Advice>();
+//
+//    @OneToMany(mappedBy = "patient")
+//    private List<Records> records = new ArrayList<Records>();
 }

@@ -17,8 +17,8 @@ public class PatientController {
     @Autowired
     PatientService patientService;
 
-    @GetMapping("/{name}")
-    public Optional<User> getPatient(@PathVariable("name") String nic){
+    @GetMapping("/{nic}")
+    public User getPatient(@PathVariable("nic") String nic){
         return patientService.getPatientByNIC(nic);
     }
 

@@ -47,7 +47,7 @@ public class PatientService {
     }
 
 
-    public Optional<User> getPatientByNIC(String nic) {
-        return patientRepository.findUserByNic(nic);
+    public User getPatientByNIC(String nic) {
+        return patientRepository.findByNic(nic);
     }
 }
