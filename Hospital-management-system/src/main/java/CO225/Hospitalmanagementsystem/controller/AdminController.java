@@ -4,6 +4,7 @@ package CO225.Hospitalmanagementsystem.controller;
 import CO225.Hospitalmanagementsystem.model.*;
 import CO225.Hospitalmanagementsystem.service.AdminService;
 import CO225.Hospitalmanagementsystem.service.JwtService;
+import CO225.Hospitalmanagementsystem.service.MailService;
 import CO225.Hospitalmanagementsystem.service.WardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -30,6 +31,9 @@ public class AdminController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private MailService mailService;
+
 
 
     @GetMapping("/welcome")
@@ -41,6 +45,7 @@ public class AdminController {
 
     @PostMapping("/staff")
     public UserInfoModel addNewUser(@RequestBody UserInfoModel userInfoModel){
+        mailService.sendEmail(userInfoModel);
         return adminService.addUser(userInfoModel);
       //  return "check";
     }
