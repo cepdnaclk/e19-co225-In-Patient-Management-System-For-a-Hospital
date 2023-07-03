@@ -5,7 +5,7 @@ import axios from "axios";
 
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { LiaBirthdayCakeSolid } from "react-icons/Lia";
-import { TbBuildingHospital } from "react-icons/Tb";
+import { BsHospital } from "react-icons/Bs";
 import { LiaAllergiesSolid } from "react-icons/Lia";
 
 function PatientDashboard(props) {
@@ -40,27 +40,52 @@ function PatientDashboard(props) {
     //Health Status
     const bodyTemperature = 36
     const sugarLevel = 130
-    const bloodPressure = 75
+    const bloodPressure = 79
 
-    const bodyTempColour = "#4f3"
-    const sugarLevelColour = "#f32"
-    const bloodPressureColour = "#4f3"
-
-    const bodyTempCondition = "Normal"
     const SugarLevelCondition = "Severe"
     const bloodPressureCondition = "Normal"
 
+    const getTempColour = () => {
+        if (36 <= bodyTemperature && bodyTemperature <= 38) {
+            return "#4f3"
+        }
+        return "#f47"
+    }
 
+    const getTempStatus = () => {
+        if (36 <= bodyTemperature && bodyTemperature <= 38) {
+            return "Normal"
+        }
+        return "Severe"
+    }
 
-    // if (35 < sugarLevel && sugarLevel < 38) {
-    //     sugarLevelColour = "red"
-    //     SugarLevelCondition = "Severe"
-    // }
+    const getSugarColour = () => {
+        if (70 < sugarLevel && sugarLevel < 100) {
+            return "#4f3"
+        }
+        return "#f47"
+    }
 
-    // if (35 < bloodPressure && bloodPressure < 38) {
-    //     bloodPressureColour = "red"
-    //     bloodPressureCondition = "Severe"
-    // }
+    const getSugarStatus = () => {
+        if (70 < sugarLevel && sugarLevel < 100) {
+            return "Normal"
+        }
+        return "Severe"
+    }
+
+    const getPressureColour = () => {
+        if (bloodPressure < 80) {
+            return "#4f3"
+        }
+        return "#f47"
+    }
+
+    const getBloodStatus = () => {
+        if (bloodPressure < 80) {
+            return "Normal"
+        }
+        return "Severe"
+    }
 
     return (
         <>
@@ -107,7 +132,7 @@ function PatientDashboard(props) {
 
                         <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                             <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
-                                <TbBuildingHospital size={30} />
+                                <BsHospital size={30} />
                             </div>
                             <div className="p-4 text-right">
                                 <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Date Admitted</p>
@@ -149,9 +174,9 @@ function PatientDashboard(props) {
                                 {/* Content Here */}
                                 <div className="pl-5 flex flex-col  flex-grow">
                                     <div className='justify-between pb-5'>
-                                        <CircularProgressBar color={bodyTempColour} value={bodyTemperature} />
+                                        <CircularProgressBar color={getTempColour()} value={bodyTemperature} />
                                     </div>
-                                    <span style={{ fontSize: 20 }}>Condition: {bodyTempCondition}</span>
+                                    <span style={{ fontSize: 20 }}>Condition: {getTempStatus()}</span>
                                     <span style={{ fontSize: 20 }}>Accepted Level: 36.1°C to 37.2°C</span>
                                 </div>
                             </div>
@@ -166,9 +191,9 @@ function PatientDashboard(props) {
                                 <div className="pl-5 flex flex-col  flex-grow">
 
                                     <div className='justify-between pb-5'>
-                                        <CircularProgressBar color={sugarLevelColour} value={sugarLevel} />
+                                        <CircularProgressBar color={getSugarColour()} value={sugarLevel} />
                                     </div>
-                                    <span style={{ fontSize: 20 }}>Condition: {SugarLevelCondition}</span>
+                                    <span style={{ fontSize: 20 }}>Condition: {getSugarStatus()}</span>
                                     <span style={{ fontSize: 20 }}>Accepted Level: 70mg/dL to 100mg/dL</span>
                                 </div>
                             </div>
@@ -183,9 +208,9 @@ function PatientDashboard(props) {
 
                                 <div className="pl-5 flex flex-col  flex-grow">
                                     <div className='justify-between pb-5'>
-                                        <CircularProgressBar color={bloodPressureColour} value={bloodPressure} />
+                                        <CircularProgressBar color={getPressureColour()} value={bloodPressure} />
                                     </div>
-                                    <span style={{ fontSize: 20 }}>Condition:{bloodPressureCondition}</span>
+                                    <span style={{ fontSize: 20 }}>Condition:{getBloodStatus()}</span>
                                     <span style={{ fontSize: 20 }}>Accepted Level: Less than 80mmHg</span>
                                 </div>
                             </div>
