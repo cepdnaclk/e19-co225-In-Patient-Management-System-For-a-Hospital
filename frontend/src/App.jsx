@@ -11,7 +11,8 @@ import AdminWards from './components/adminFiles/AdminWards';
 import AdminAddStaff from './components/adminFiles/AdminAddStaff';
 
 import PatientDashboard from './components/patientFiles/patientDashboard';
-import LoginPatient from './components/loginfiles/loginpatient';
+// import LoginPatient from './components/loginfiles/loginpatient';
+import LoginPatient from './components/loginfiles/NicLogin';
 
 import DoctorDashboard from './components/doctorFiles/doctorDashboard';
 import DoctorProfile from './components/doctorFiles/doctorProfile';
@@ -74,7 +75,8 @@ function App() {
           <Route path="admin/addStaff" element={<AdminAddStaff isMobile={isMobile} />} /> */}
 
           <Route path='/patient' element={<LoginPatient />} />
-          <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} />
+          {/* <Route path="/patient/dashboard" element={<PatientDashboard isMobile={isMobile} />} /> */}
+          <Route path="/patient/dashboard/:id" element={<PatientDashboard isMobile={isMobile} />} />
 
           <Route path="/doctor" element={<DoctorDashboard isMobile={isMobile} />} />
           <Route path="/doctor/dashboard" element={<DoctorDashboard isMobile={isMobile} />} />

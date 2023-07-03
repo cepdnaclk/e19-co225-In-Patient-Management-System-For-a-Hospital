@@ -7,16 +7,103 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { LiaBirthdayCakeSolid } from "react-icons/Lia";
 import { BsHospital } from "react-icons/Bs";
 import { LiaAllergiesSolid } from "react-icons/Lia";
+import PatientService from "../../services/PatientService";
 
 function PatientDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
+    
 
-    // const [users, setUsers] = useState([]);
+     const [users, setUsers] = useState();
 
     // useEffect(() => {
+    //     const currentUrl = window.location.href
+    //     const segments = path.split("/");
+    //     const nic = segments[segments.length - 1];
+
+
     //     loadUsers();
     // }, []);
+    useEffect(() => {
+        const fetchData = async () => {
+            const currentUrl = window.location.href
+        const segments = path.split("/");
+        const nic = segments[segments.length - 1];
+          useEffect(() => {
+    const fetchData = async () => {
+      try {
+        
+        const data = await PatientService.getData(nic);
+        console.log(data)
+        
+        // console.log(response.data);
+      } catch (error) {
+        console.log(error);
+        console.log("fetch err");
+      }
+   
+
+      
+      
+      
+    };
+    fetchData();
+  }, []);
+          try {
+             const response = await EmployeeService.getCount();
+            const response_graph = await EmployeeService.getadmitData();
+            setLoading(false);
+            const date = response_graph.data.map(item => (new Date(item.x)).getDate());
+            const count = response_graph.data.map(item => parseInt(item.y));
+            setAdmit(response_graph.data);
+            setCount(response.data);
+            console.log(admit);
+          const xValues = [];
+          const yValues = [];
+          const nData = [];
+    
+          response_graph.data.forEach(item => {
+            const dateParts = item.x.split("T")[0].split("-");
+            
+            const year = parseInt(dateParts[0]);
+            const month = parseInt(dateParts[1]); // Months are zero-based (0-11)
+            const day = parseInt(dateParts[2]);
+            console.log(dateParts);
+            console.log([year, month,day])
+            xValues.push(new Date(year, month, day).getDate());
+            nData.push({y:parseInt(item.y),
+               x: new Date(item.x)})
+               //(new Date((year, month, day)))});
+            yValues.push(parseInt(item.y));
+          });
+            console.log(date);
+            console.log(nData)
+            
+        //     setX(prevX => [...prevX, ...xValues]);
+        //   setY(prevY => [...prevY, ...yValues]);
+        setX(xValues);
+        setY(yValues);
+          console.log(x);
+          console.log(y);
+          setTest([
+            {
+              id: "hours",
+              data: nData
+            }
+          ]);
+            // console.log(response.data);
+          } catch (error) {
+            console.log(error);
+            console.log("fetch err");
+          }
+       
+    
+          
+          
+          
+        };
+        fetchData();
+      }, []);
 
     // const loadUsers = async () => {
     //     const result = await axios.get("http://localhost:9081/patient/nic");
