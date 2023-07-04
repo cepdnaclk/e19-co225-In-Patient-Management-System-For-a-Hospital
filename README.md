@@ -42,12 +42,8 @@ Full stack software project to implement a hospital management system. Users in 
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/8886dfb6-b613-461f-b6cd-d625d76e3553" />
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/871f185a-ce69-4bfc-8eab-d8f723ea8e89" />
 
-
 ----
-<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/debbd03b-32e5-497c-96f1-d6e7987132f3" />
-
-
-
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/5589d5b3-9ee4-42b9-835d-5405ec71c197" />
 
 ## Our Team
 
