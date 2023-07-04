@@ -3,12 +3,11 @@ import NurseSidebar from './nurseSidebar';
 import { AiOutlineUserAdd, AiOutlineMessage, AiOutlineBell } from "react-icons/ai";
 
 
-
 function NurseDashboard(props) {
     const { isMobile } = props;
     const open = isMobile;
-    const totalPatients = 20;
-    const totalWards = 3;
+    const totalPatients = 21;
+    const totalWards = 4;
     return (
         <>
             <NurseSidebar isMobile={isMobile} />
@@ -38,7 +37,6 @@ function NurseDashboard(props) {
                         </div>
                     </div>
 
-
                     <div className="bg-gray-100 p-6">
                         {/* Doctors, Nurse, User count */}
                         <div className="flex flex-wrap">
@@ -61,7 +59,6 @@ function NurseDashboard(props) {
                         </div>
                     </div>
 
-
                     <div className="bg-gray-100 p-6">
                         {/* Doctors, Nurse, User count */}
                         <div className="flex flex-wrap">
@@ -78,7 +75,6 @@ function NurseDashboard(props) {
                                             <p className="font-bold text-3xl">{totalWards}</p>
                                         </div>
 
-
                                     </div>
                                 </div>
                             </div>
@@ -89,5 +85,4 @@ function NurseDashboard(props) {
         </>
     );
 }
-
 export default NurseDashboard;
