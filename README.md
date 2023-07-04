@@ -39,6 +39,9 @@ Full stack web application to implement a hospital management system. Users in t
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/0f62b7b2-85e2-4ab5-ba8f-4b3967f17a8c" />
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/8886dfb6-b613-461f-b6cd-d625d76e3553" />
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/871f185a-ce69-4bfc-8eab-d8f723ea8e89" />
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115540884/62699c80-4040-4e61-9ab2-c33ff3de4c19" />
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115540884/a9286186-abd5-43f7-84dc-f3b3419522e1" />
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115540884/07955300-35d1-4a28-8a29-2ef6108429c2" />
 
 ----
 
