@@ -3,8 +3,6 @@
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/b54f58ae-9f19-4d16-9181-797d13343fb4"
 />
 
-
- 
 ## Introducing MEDNET: Revolutionizing the Patient Management System
 
 MEDNET is a web application designed to streamline and enhance the process of patient management. Developed with the aim of improving healthcare delivery, MEDNET provides healthcare providers with an efficient and user-friendly platform to handle patient information, monitor treatment progress, and enhance communication among healthcare teams.
@@ -43,7 +41,8 @@ Full stack software project to implement a hospital management system. Users in 
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/871f185a-ce69-4bfc-8eab-d8f723ea8e89" />
 
 ----
-<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/5589d5b3-9ee4-42b9-835d-5405ec71c197" />
+
+<img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/19c1975d-8d17-4130-b9cd-c4b0c8de0ce4" />
 
 ## Our Team
 
