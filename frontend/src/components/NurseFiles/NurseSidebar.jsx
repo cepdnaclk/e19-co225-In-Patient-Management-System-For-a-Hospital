@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
+
 import { AiFillDashboard } from "react-icons/ai";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import { CgProfile } from "react-icons/Cg";
+
 
 function NurseSidebar(props) {
     const { isMobile } = props;
@@ -14,10 +16,12 @@ function NurseSidebar(props) {
         //         { title: "Patients", src: <CgProfile size={30} />, path: "/doctor/patients" },
     ];
 
+
     const navigateDashBoard = (e, path) => {
         e.preventDefault();
         navigate(path);
     }
+
 
     const open = isMobile;
     return (
@@ -41,5 +45,7 @@ function NurseSidebar(props) {
         </>
     );
 };
+
+
 
 export default NurseSidebar;
