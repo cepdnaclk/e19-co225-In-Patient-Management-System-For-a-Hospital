@@ -40,10 +40,14 @@ Full stack web application to implement a hospital management system. Users in t
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/8886dfb6-b613-461f-b6cd-d625d76e3553" />
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115687865/871f185a-ce69-4bfc-8eab-d8f723ea8e89" />
 
-----
 
 <img src ="https://github.com/cepdnaclk/e19-co225-In-Patient-Management-System-For-a-Hospital/assets/115539769/19c1975d-8d17-4130-b9cd-c4b0c8de0ce4" />
-
+---
+##Additional features
+Mail service to alert medical officiers.
+Role based Authentication System
+Secure sensitive data using Authorization and encodings
+---
 ## Our Team
 
 ### Group 14:
