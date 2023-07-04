@@ -32,6 +32,15 @@ In most hospitals, old file systems are used to keep the track of patient's info
 
 
 ---
+
+## Additional features <img width = "50" height = "30" src = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png">  <img src ="https://cdn-icons-png.flaticon.com/512/2996/2996218.png" width = "50" height = "30">
+
+
+Mail service to alert medical officiers.<br>
+Role based Authentication System<br>
+Secure sensitive data using Authorization and encodings 
+
+---
 ## Overview
 Full stack web application to implement a hospital management system. Users in this applications are Administration, Doctors, Nurses, Adnission clerks and Care givers. Seperate API have deveoloped for all functions. Including Spring security , encryption and Json Web token to protect sensitive data using Authorization and Authentication
 
@@ -45,12 +54,7 @@ Full stack web application to implement a hospital management system. Users in t
 
 
 
----
 
-## Additional features
-Mail service to alert medical officiers.<br>
-Role based Authentication System<br>
-Secure sensitive data using Authorization and encodings
 
 
 ---
